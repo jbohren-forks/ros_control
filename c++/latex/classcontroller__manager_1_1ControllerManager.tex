@@ -1,0 +1,575 @@
+\section{controller\-\_\-manager\-:\-:\-Controller\-Manager \-Class \-Reference}
+\label{classcontroller__manager_1_1ControllerManager}\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+
+
+\-R\-O\-S \-Controller \-Manager and \-Runner.  
+
+
+
+
+{\ttfamily \#include $<$controller\-\_\-manager.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controller\-Manager} (hardware\-\_\-interface\-::\-Robot\-H\-W $\ast$robot\-\_\-hw, const ros\-::\-Node\-Handle \&nh=ros\-::\-Node\-Handle())
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Controller\-Manager} ()
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf \-Real-\/\-Time \-Safe \-Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+void {\bf update} (const ros\-::\-Time \&time, const ros\-::\-Duration \&period, bool reset\-\_\-controllers=false)
+\begin{DoxyCompactList}\small\item\em \-Update all active controllers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf \-Non \-Real-\/\-Time \-Safe \-Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf load\-Controller} (const std\-::string \&name)
+\begin{DoxyCompactList}\small\item\em \-Load a new controller by name. \end{DoxyCompactList}\item 
+bool {\bf unload\-Controller} (const std\-::string \&name)
+\begin{DoxyCompactList}\small\item\em \-Unload a controller by name. \end{DoxyCompactList}\item 
+bool {\bf switch\-Controller} (const std\-::vector$<$ std\-::string $>$ \&start\-\_\-controllers, const std\-::vector$<$ std\-::string $>$ \&stop\-\_\-controllers, const int strictness)
+\begin{DoxyCompactList}\small\item\em \-Switch multiple controllers simultaneously. \end{DoxyCompactList}\item 
+controller\-\_\-interface\-::\-Controller\-Base $\ast$ {\bf get\-Controller\-By\-Name} (const std\-::string \&name)
+\begin{DoxyCompactList}\small\item\em \-Get a controller by name. \end{DoxyCompactList}\item 
+void {\bf register\-Controller\-Loader} (boost\-::shared\-\_\-ptr$<$ {\bf \-Controller\-Loader\-Interface} $>$ controller\-\_\-loader)
+\begin{DoxyCompactList}\small\item\em \-Register a controller loader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \*
+controller\-\_\-interface\-::\-Controller\-Base $\ast$ {\bf get\-Controller\-By\-Name\-Impl} (const std\-::string \&name)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\-::shared\-\_\-ptr\*
+$<$ {\bf \-Controller\-Loader\-Interface} $>$ {\bf \-Loader\-Ptr}
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf get\-Controller\-Names} (std\-::vector$<$ std\-::string $>$ \&v)
+\item 
+void {\bf get\-Controller\-Schedule} (std\-::vector$<$ size\-\_\-t $>$ \&schedule)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle {\bf cm\-\_\-node\-\_\-}
+\item 
+std\-::list$<$ {\bf \-Loader\-Ptr} $>$ {\bf controller\-\_\-loaders\-\_\-}
+\item 
+ros\-::\-Node\-Handle {\bf controller\-\_\-node\-\_\-}
+\item 
+hardware\-\_\-interface\-::\-Robot\-H\-W $\ast$ {\bf robot\-\_\-hw\-\_\-}
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf \-Controller \-Switching}\par
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector\*
+$<$ controller\-\_\-interface\-::\-Controller\-Base $\ast$ $>$ {\bf start\-\_\-request\-\_\-}
+\item 
+std\-::vector\*
+$<$ controller\-\_\-interface\-::\-Controller\-Base $\ast$ $>$ {\bf stop\-\_\-request\-\_\-}
+\item 
+bool {\bf please\-\_\-switch\-\_\-}
+\item 
+int {\bf switch\-\_\-strictness\-\_\-}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf \-Controllers \-List}\par
+{\em \-The controllers list is double-\/buffered to avoid needing to lock the real-\/time thread when switching controllers in the non-\/real-\/time thread. }\begin{DoxyCompactItemize}
+\item 
+boost\-::mutex {\bf controllers\-\_\-lock\-\_\-}
+\item 
+std\-::vector$<$ {\bf \-Controller\-Spec} $>$ {\bf controllers\-\_\-lists\-\_\-} [2]
+\item 
+int {\bf current\-\_\-controllers\-\_\-list\-\_\-}
+\begin{DoxyCompactList}\small\item\em \-The index of the current controllers list. \end{DoxyCompactList}\item 
+int {\bf used\-\_\-by\-\_\-realtime\-\_\-}
+\begin{DoxyCompactList}\small\item\em \-The index of the controllers list being used in the real-\/time thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-R\-O\-S \-Service \-A\-P\-I}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::mutex {\bf services\-\_\-lock\-\_\-}
+\item 
+ros\-::\-Service\-Server {\bf srv\-\_\-list\-\_\-controllers\-\_\-}
+\item 
+ros\-::\-Service\-Server {\bf srv\-\_\-list\-\_\-controller\-\_\-types\-\_\-}
+\item 
+ros\-::\-Service\-Server {\bf srv\-\_\-load\-\_\-controller\-\_\-}
+\item 
+ros\-::\-Service\-Server {\bf srv\-\_\-unload\-\_\-controller\-\_\-}
+\item 
+ros\-::\-Service\-Server {\bf srv\-\_\-switch\-\_\-controller\-\_\-}
+\item 
+ros\-::\-Service\-Server {\bf srv\-\_\-reload\-\_\-libraries\-\_\-}
+\item 
+bool {\bf list\-Controller\-Types\-Srv} (controller\-\_\-manager\-\_\-msgs\-::\-List\-Controller\-Types\-::\-Request \&req, controller\-\_\-manager\-\_\-msgs\-::\-List\-Controller\-Types\-::\-Response \&resp)
+\item 
+bool {\bf list\-Controllers\-Srv} (controller\-\_\-manager\-\_\-msgs\-::\-List\-Controllers\-::\-Request \&req, controller\-\_\-manager\-\_\-msgs\-::\-List\-Controllers\-::\-Response \&resp)
+\item 
+bool {\bf switch\-Controller\-Srv} (controller\-\_\-manager\-\_\-msgs\-::\-Switch\-Controller\-::\-Request \&req, controller\-\_\-manager\-\_\-msgs\-::\-Switch\-Controller\-::\-Response \&resp)
+\item 
+bool {\bf load\-Controller\-Srv} (controller\-\_\-manager\-\_\-msgs\-::\-Load\-Controller\-::\-Request \&req, controller\-\_\-manager\-\_\-msgs\-::\-Load\-Controller\-::\-Response \&resp)
+\item 
+bool {\bf unload\-Controller\-Srv} (controller\-\_\-manager\-\_\-msgs\-::\-Unload\-Controller\-::\-Request \&req, controller\-\_\-manager\-\_\-msgs\-::\-Unload\-Controller\-::\-Response \&resp)
+\item 
+bool {\bf reload\-Controller\-Libraries\-Srv} (controller\-\_\-manager\-\_\-msgs\-::\-Reload\-Controller\-Libraries\-::\-Request \&req, controller\-\_\-manager\-\_\-msgs\-::\-Reload\-Controller\-Libraries\-::\-Response \&resp)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-R\-O\-S \-Controller \-Manager and \-Runner. 
+
+\-This class advertises a \-R\-O\-S interface for loading, unloading, starting, and stopping ros\-\_\-control-\/based controllers. \-It also serializes execution of all running controllers in \doxyref{update}{p.}{classcontroller__manager_1_1ControllerManager_a340a4947a82cb93c3bcbb42ca8dc645c}. 
+
+\-Definition at line 68 of file controller\-\_\-manager.\-h.
+
+
+
+\subsection{\-Member \-Typedef \-Documentation}
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!\-Loader\-Ptr@{\-Loader\-Ptr}}
+\index{\-Loader\-Ptr@{\-Loader\-Ptr}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{\-Loader\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\-::shared\-\_\-ptr$<${\bf \-Controller\-Loader\-Interface}$>$ {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::\-Loader\-Ptr}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a95ece08b1b8ef41880e97e7a79d86be7}
+
+
+\-Definition at line 175 of file controller\-\_\-manager.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!\-Controller\-Manager@{\-Controller\-Manager}}
+\index{\-Controller\-Manager@{\-Controller\-Manager}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{\-Controller\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf controller\-\_\-manager\-::\-Controller\-Manager\-::\-Controller\-Manager} (
+\begin{DoxyParamCaption}
+\item[{hardware\-\_\-interface\-::\-Robot\-H\-W $\ast$}]{robot\-\_\-hw, }
+\item[{const ros\-::\-Node\-Handle \&}]{nh = {\ttfamily ros\-:\-:\-Node\-Handle()}}
+\end{DoxyParamCaption}
+)}\label{classcontroller__manager_1_1ControllerManager_a3487162480e9ac6bbec0511de31baf2c}
+
+
+\-Constructor. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em robot\-\_\-hw} & \-A pointer to a robot hardware interface \\
+\hline
+{\em nh} & \-The ros\-::\-Node\-Handle in whose namespace all \-R\-O\-S interfaces should operate. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 43 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!$\sim$\-Controller\-Manager@{$\sim$\-Controller\-Manager}}
+\index{$\sim$\-Controller\-Manager@{$\sim$\-Controller\-Manager}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{$\sim$\-Controller\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf controller\-\_\-manager\-::\-Controller\-Manager\-::$\sim$\-Controller\-Manager} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcontroller__manager_1_1ControllerManager_acc297e7ba73de9c6c813c7e18efa896e}
+
+
+\-Definition at line 67 of file controller\-\_\-manager.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!get\-Controller\-By\-Name@{get\-Controller\-By\-Name}}
+\index{get\-Controller\-By\-Name@{get\-Controller\-By\-Name}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{get\-Controller\-By\-Name}]{\setlength{\rightskip}{0pt plus 5cm}controller\-\_\-interface\-::\-Controller\-Base $\ast$ {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::get\-Controller\-By\-Name} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontroller__manager_1_1ControllerManager_a19641089ab588d6ee9fb0bd0a70686ee}
+
+
+\-Get a controller by name. 
+
+
+
+\-Definition at line 218 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!get\-Controller\-By\-Name\-Impl@{get\-Controller\-By\-Name\-Impl}}
+\index{get\-Controller\-By\-Name\-Impl@{get\-Controller\-By\-Name\-Impl}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{get\-Controller\-By\-Name\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}controller\-\_\-interface\-::\-Controller\-Base $\ast$ {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::get\-Controller\-By\-Name\-Impl} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classcontroller__manager_1_1ControllerManager_a5a6ad321999097b5f7fd47ceb78950ff}
+
+
+\-Definition at line 111 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!get\-Controller\-Names@{get\-Controller\-Names}}
+\index{get\-Controller\-Names@{get\-Controller\-Names}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{get\-Controller\-Names}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::get\-Controller\-Names} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$ \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a8b5753fd8b17983405a4b55141750af0}
+
+
+\-Definition at line 122 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!get\-Controller\-Schedule@{get\-Controller\-Schedule}}
+\index{get\-Controller\-Schedule@{get\-Controller\-Schedule}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{get\-Controller\-Schedule}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::get\-Controller\-Schedule} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ size\-\_\-t $>$ \&}]{schedule}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_adc42037503d73f1c67f16969c6a37f89}
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!list\-Controllers\-Srv@{list\-Controllers\-Srv}}
+\index{list\-Controllers\-Srv@{list\-Controllers\-Srv}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{list\-Controllers\-Srv}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::list\-Controllers\-Srv} (
+\begin{DoxyParamCaption}
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-List\-Controllers\-::\-Request \&}]{req, }
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-List\-Controllers\-::\-Response \&}]{resp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_ae1502987cd21c568b6c2a5ec64cd38bb}
+
+
+\-Definition at line 541 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!list\-Controller\-Types\-Srv@{list\-Controller\-Types\-Srv}}
+\index{list\-Controller\-Types\-Srv@{list\-Controller\-Types\-Srv}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{list\-Controller\-Types\-Srv}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::list\-Controller\-Types\-Srv} (
+\begin{DoxyParamCaption}
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-List\-Controller\-Types\-::\-Request \&}]{req, }
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-List\-Controller\-Types\-::\-Response \&}]{resp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a5547504dd36e3a276ae0fff2b508eb32}
+
+
+\-Definition at line 514 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!load\-Controller@{load\-Controller}}
+\index{load\-Controller@{load\-Controller}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{load\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::load\-Controller} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcontroller__manager_1_1ControllerManager_a6316b64601392b811381073a73022ef3}
+
+
+\-Load a new controller by name. 
+
+\-This dynamically loads a controller called {\ttfamily name} and initializes the newly loaded controller.
+
+\-It determines the controller type by accessing the \-R\-O\-S parameter \char`\"{}type\char`\"{} in the namespace given by {\ttfamily name} relative to the namespace of \doxyref{controller\-\_\-node\-\_\-}{p.}{classcontroller__manager_1_1ControllerManager_a895914ca99e347766db020ec4a4f80cc}. \-It then initializes the controller with the hardware\-\_\-interface\-::\-Robot\-H\-W pointer \doxyref{robot\-\_\-hw\-\_\-}{p.}{classcontroller__manager_1_1ControllerManager_aebd93b5efd9981539c00837471e67a17}, the ros\-::\-Node\-Handle describing this namespace, and a reference to a std\-::set to retrieve the resources needed by this controller.
+
+\-A controller cannot be loaded while already loaded. \-To re-\/load a controller, first \doxyref{unload\-Controller}{p.}{classcontroller__manager_1_1ControllerManager_aaff12715b2afdec1a114683d4bd5c754} and then \doxyref{load\-Controller}{p.}{classcontroller__manager_1_1ControllerManager_a6316b64601392b811381073a73022ef3}.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-The name of the controller as well as the \-R\-O\-S namespace under which the controller should be loaded\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-True on success 
+
+\-False on failure 
+\end{DoxyReturn}
+
+
+\-Definition at line 133 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!load\-Controller\-Srv@{load\-Controller\-Srv}}
+\index{load\-Controller\-Srv@{load\-Controller\-Srv}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{load\-Controller\-Srv}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::load\-Controller\-Srv} (
+\begin{DoxyParamCaption}
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-Load\-Controller\-::\-Request \&}]{req, }
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-Load\-Controller\-::\-Response \&}]{resp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_ae609f6ba78a44e8fb41df58034df9929}
+
+
+\-Definition at line 580 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!register\-Controller\-Loader@{register\-Controller\-Loader}}
+\index{register\-Controller\-Loader@{register\-Controller\-Loader}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{register\-Controller\-Loader}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::register\-Controller\-Loader} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-Controller\-Loader\-Interface} $>$}]{controller\-\_\-loader}
+\end{DoxyParamCaption}
+)}\label{classcontroller__manager_1_1ControllerManager_ae688de123fa41763784a46741fa0f378}
+
+
+\-Register a controller loader. 
+
+\-By default, the pluginlib-\/based \doxyref{\-Controller\-Loader}{p.}{classcontroller__manager_1_1ControllerLoader} is registered on construction of this class. \-To load controllers through alternate means, register alternate controller loaders here. \-Note, however, that when controllers are loaded by \doxyref{load\-Controller}{p.}{classcontroller__manager_1_1ControllerManager_a6316b64601392b811381073a73022ef3} the controller loaders are queried in the order that they were registered. \-This means that if a controller \-C\-A\-N be loaded by the pluginlib-\/based \doxyref{\-Controller\-Loader}{p.}{classcontroller__manager_1_1ControllerLoader}, then it \-W\-I\-L\-L, regardless of which other loaders are registered.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em controller\-\_\-loader} & \-A pointer to the loader to be registered \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 627 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!reload\-Controller\-Libraries\-Srv@{reload\-Controller\-Libraries\-Srv}}
+\index{reload\-Controller\-Libraries\-Srv@{reload\-Controller\-Libraries\-Srv}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{reload\-Controller\-Libraries\-Srv}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::reload\-Controller\-Libraries\-Srv} (
+\begin{DoxyParamCaption}
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-Reload\-Controller\-Libraries\-::\-Request \&}]{req, }
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-Reload\-Controller\-Libraries\-::\-Response \&}]{resp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_ac671e1e888be5051fe8a6451c0f9b4c8}
+
+
+\-Definition at line 461 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!switch\-Controller@{switch\-Controller}}
+\index{switch\-Controller@{switch\-Controller}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{switch\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::switch\-Controller} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::string $>$ \&}]{start\-\_\-controllers, }
+\item[{const std\-::vector$<$ std\-::string $>$ \&}]{stop\-\_\-controllers, }
+\item[{const int}]{strictness}
+\end{DoxyParamCaption}
+)}\label{classcontroller__manager_1_1ControllerManager_a731fb6a9be5781003b889b55e8b18e72}
+
+
+\-Switch multiple controllers simultaneously. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em start\-\_\-controllers} & \-A vector of controller names to be started \\
+\hline
+{\em stop\-\_\-controllers} & \-A vector of controller names to be stopped \\
+\hline
+{\em strictness} & \-How important it is that the requested controllers are started and stopped. \-The levels are defined in the controller\-\_\-manager\-\_\-msgs/\-Switch\-Controllers service as either {\ttfamily \-B\-E\-S\-T\-\_\-\-E\-F\-F\-O\-R\-T} or {\ttfamily \-S\-T\-R\-I\-C\-T}. {\ttfamily \-B\-E\-S\-T\-\_\-\-E\-F\-F\-O\-R\-T} means that \doxyref{switch\-Controller}{p.}{classcontroller__manager_1_1ControllerManager_a731fb6a9be5781003b889b55e8b18e72} can still succeed if a non-\/existant controller is requested to be stopped or started. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 333 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!switch\-Controller\-Srv@{switch\-Controller\-Srv}}
+\index{switch\-Controller\-Srv@{switch\-Controller\-Srv}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{switch\-Controller\-Srv}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::switch\-Controller\-Srv} (
+\begin{DoxyParamCaption}
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-Switch\-Controller\-::\-Request \&}]{req, }
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-Switch\-Controller\-::\-Response \&}]{resp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a69af670bd07c3de1a0d6c4645ddcd9e3}
+
+
+\-Definition at line 612 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!unload\-Controller@{unload\-Controller}}
+\index{unload\-Controller@{unload\-Controller}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{unload\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::unload\-Controller} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcontroller__manager_1_1ControllerManager_aaff12715b2afdec1a114683d4bd5c754}
+
+
+\-Unload a controller by name. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-The name of the controller to unload. (\-The same as the one used in \doxyref{load\-Controller}{p.}{classcontroller__manager_1_1ControllerManager_a6316b64601392b811381073a73022ef3} ) \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 269 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!unload\-Controller\-Srv@{unload\-Controller\-Srv}}
+\index{unload\-Controller\-Srv@{unload\-Controller\-Srv}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{unload\-Controller\-Srv}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::unload\-Controller\-Srv} (
+\begin{DoxyParamCaption}
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-Unload\-Controller\-::\-Request \&}]{req, }
+\item[{controller\-\_\-manager\-\_\-msgs\-::\-Unload\-Controller\-::\-Response \&}]{resp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a94dad422983417a4df4db2b542a986b0}
+
+
+\-Definition at line 596 of file controller\-\_\-manager.\-cpp.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!update@{update}}
+\index{update@{update}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::update} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Time \&}]{time, }
+\item[{const ros\-::\-Duration \&}]{period, }
+\item[{bool}]{reset\-\_\-controllers = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcontroller__manager_1_1ControllerManager_a340a4947a82cb93c3bcbb42ca8dc645c}
+
+
+\-Update all active controllers. 
+
+\-When controllers are started or stopped (or switched), those calls are made in this function.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em time} & \-The current time \\
+\hline
+{\em period} & \-The change in time since the last call to \doxyref{update}{p.}{classcontroller__manager_1_1ControllerManager_a340a4947a82cb93c3bcbb42ca8dc645c} \\
+\hline
+{\em reset\-\_\-controllers} & \-If {\ttfamily true}, stop and start all running controllers before updating \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 74 of file controller\-\_\-manager.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!cm\-\_\-node\-\_\-@{cm\-\_\-node\-\_\-}}
+\index{cm\-\_\-node\-\_\-@{cm\-\_\-node\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{cm\-\_\-node\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::cm\-\_\-node\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_ace8d0c0b00159cae024ab335e854bc8e}
+
+
+\-Definition at line 173 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!controller\-\_\-loaders\-\_\-@{controller\-\_\-loaders\-\_\-}}
+\index{controller\-\_\-loaders\-\_\-@{controller\-\_\-loaders\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{controller\-\_\-loaders\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf \-Loader\-Ptr}$>$ {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::controller\-\_\-loaders\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a2e6556217aaac8f3fc1599565da55086}
+
+
+\-Definition at line 176 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!controller\-\_\-node\-\_\-@{controller\-\_\-node\-\_\-}}
+\index{controller\-\_\-node\-\_\-@{controller\-\_\-node\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{controller\-\_\-node\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::controller\-\_\-node\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a895914ca99e347766db020ec4a4f80cc}
+
+
+\-Definition at line 173 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!controllers\-\_\-lists\-\_\-@{controllers\-\_\-lists\-\_\-}}
+\index{controllers\-\_\-lists\-\_\-@{controllers\-\_\-lists\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{controllers\-\_\-lists\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-Controller\-Spec}$>$ {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::controllers\-\_\-lists\-\_\-}[2]\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_afb9a5dbddb0ddc3ee6208e6ad6220f33}
+
+
+\-Definition at line 190 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!controllers\-\_\-lock\-\_\-@{controllers\-\_\-lock\-\_\-}}
+\index{controllers\-\_\-lock\-\_\-@{controllers\-\_\-lock\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{controllers\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::controllers\-\_\-lock\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a3dd6b3d9ad945e6bacccf50e9aa1e9fa}
+
+
+\-Definition at line 189 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!current\-\_\-controllers\-\_\-list\-\_\-@{current\-\_\-controllers\-\_\-list\-\_\-}}
+\index{current\-\_\-controllers\-\_\-list\-\_\-@{current\-\_\-controllers\-\_\-list\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{current\-\_\-controllers\-\_\-list\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::current\-\_\-controllers\-\_\-list\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a0a8e7ccd5ef44806cd10ee2ea0888d8a}
+
+
+\-The index of the current controllers list. 
+
+
+
+\-Definition at line 192 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!please\-\_\-switch\-\_\-@{please\-\_\-switch\-\_\-}}
+\index{please\-\_\-switch\-\_\-@{please\-\_\-switch\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{please\-\_\-switch\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::please\-\_\-switch\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_ae63976c1be4e6877687dbef72ced6d88}
+
+
+\-Definition at line 181 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!robot\-\_\-hw\-\_\-@{robot\-\_\-hw\-\_\-}}
+\index{robot\-\_\-hw\-\_\-@{robot\-\_\-hw\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{robot\-\_\-hw\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}hardware\-\_\-interface\-::\-Robot\-H\-W$\ast$ {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::robot\-\_\-hw\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_aebd93b5efd9981539c00837471e67a17}
+
+
+\-Definition at line 171 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!services\-\_\-lock\-\_\-@{services\-\_\-lock\-\_\-}}
+\index{services\-\_\-lock\-\_\-@{services\-\_\-lock\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{services\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::services\-\_\-lock\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_aa087fe392edbfd1536a254922c87f985}
+
+
+\-Definition at line 212 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!srv\-\_\-list\-\_\-controller\-\_\-types\-\_\-@{srv\-\_\-list\-\_\-controller\-\_\-types\-\_\-}}
+\index{srv\-\_\-list\-\_\-controller\-\_\-types\-\_\-@{srv\-\_\-list\-\_\-controller\-\_\-types\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{srv\-\_\-list\-\_\-controller\-\_\-types\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::srv\-\_\-list\-\_\-controller\-\_\-types\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_ac21b85b1774c7e1f34463f429fc1dc54}
+
+
+\-Definition at line 213 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!srv\-\_\-list\-\_\-controllers\-\_\-@{srv\-\_\-list\-\_\-controllers\-\_\-}}
+\index{srv\-\_\-list\-\_\-controllers\-\_\-@{srv\-\_\-list\-\_\-controllers\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{srv\-\_\-list\-\_\-controllers\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::srv\-\_\-list\-\_\-controllers\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_aa8fb859e5667647a066be26b9595224e}
+
+
+\-Definition at line 213 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!srv\-\_\-load\-\_\-controller\-\_\-@{srv\-\_\-load\-\_\-controller\-\_\-}}
+\index{srv\-\_\-load\-\_\-controller\-\_\-@{srv\-\_\-load\-\_\-controller\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{srv\-\_\-load\-\_\-controller\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::srv\-\_\-load\-\_\-controller\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a26cf91b9bfa7922d174dd73dd4bb9a62}
+
+
+\-Definition at line 213 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!srv\-\_\-reload\-\_\-libraries\-\_\-@{srv\-\_\-reload\-\_\-libraries\-\_\-}}
+\index{srv\-\_\-reload\-\_\-libraries\-\_\-@{srv\-\_\-reload\-\_\-libraries\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{srv\-\_\-reload\-\_\-libraries\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::srv\-\_\-reload\-\_\-libraries\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a6695b5a61e6b63a17bb83e523b852221}
+
+
+\-Definition at line 214 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!srv\-\_\-switch\-\_\-controller\-\_\-@{srv\-\_\-switch\-\_\-controller\-\_\-}}
+\index{srv\-\_\-switch\-\_\-controller\-\_\-@{srv\-\_\-switch\-\_\-controller\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{srv\-\_\-switch\-\_\-controller\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::srv\-\_\-switch\-\_\-controller\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_ae472e9d94ce7e3de14a9c62ff3c0b8ce}
+
+
+\-Definition at line 214 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!srv\-\_\-unload\-\_\-controller\-\_\-@{srv\-\_\-unload\-\_\-controller\-\_\-}}
+\index{srv\-\_\-unload\-\_\-controller\-\_\-@{srv\-\_\-unload\-\_\-controller\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{srv\-\_\-unload\-\_\-controller\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::srv\-\_\-unload\-\_\-controller\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a50e95a14710d7190535a9e1423378965}
+
+
+\-Definition at line 214 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!start\-\_\-request\-\_\-@{start\-\_\-request\-\_\-}}
+\index{start\-\_\-request\-\_\-@{start\-\_\-request\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{start\-\_\-request\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$controller\-\_\-interface\-::\-Controller\-Base$\ast$$>$ {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::start\-\_\-request\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_ae99699b5d1e3d5502fc56ca3a16cc18d}
+
+
+\-Definition at line 180 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!stop\-\_\-request\-\_\-@{stop\-\_\-request\-\_\-}}
+\index{stop\-\_\-request\-\_\-@{stop\-\_\-request\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{stop\-\_\-request\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$controller\-\_\-interface\-::\-Controller\-Base$\ast$$>$ {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::stop\-\_\-request\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a94e40241232f5ad14c7a3c84275b10b8}
+
+
+\-Definition at line 180 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!switch\-\_\-strictness\-\_\-@{switch\-\_\-strictness\-\_\-}}
+\index{switch\-\_\-strictness\-\_\-@{switch\-\_\-strictness\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{switch\-\_\-strictness\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::switch\-\_\-strictness\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a7fd75d8db77b4d602e4fc3ecbea1dee7}
+
+
+\-Definition at line 182 of file controller\-\_\-manager.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Manager@{controller\-\_\-manager\-::\-Controller\-Manager}!used\-\_\-by\-\_\-realtime\-\_\-@{used\-\_\-by\-\_\-realtime\-\_\-}}
+\index{used\-\_\-by\-\_\-realtime\-\_\-@{used\-\_\-by\-\_\-realtime\-\_\-}!controller_manager::ControllerManager@{controller\-\_\-manager\-::\-Controller\-Manager}}
+\subsubsection[{used\-\_\-by\-\_\-realtime\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf controller\-\_\-manager\-::\-Controller\-Manager\-::used\-\_\-by\-\_\-realtime\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerManager_a7aff5326225ea33556e6380153cbd0d0}
+
+
+\-The index of the controllers list being used in the real-\/time thread. 
+
+
+
+\-Definition at line 194 of file controller\-\_\-manager.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf controller\-\_\-manager.\-h}\item 
+{\bf controller\-\_\-manager.\-cpp}\end{DoxyCompactItemize}
