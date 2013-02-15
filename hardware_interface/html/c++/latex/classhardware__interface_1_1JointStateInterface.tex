@@ -1,0 +1,142 @@
+\section{hardware\-\_\-interface\-:\-:\-Joint\-State\-Interface \-Class \-Reference}
+\label{classhardware__interface_1_1JointStateInterface}\index{hardware\-\_\-interface\-::\-Joint\-State\-Interface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}}
+
+
+\-Hardware interface to support reading the state of an array of joints.  
+
+
+
+
+{\ttfamily \#include $<$joint\-\_\-state\-\_\-interface.\-h$>$}
+
+
+
+\-Inheritance diagram for hardware\-\_\-interface\-:\-:\-Joint\-State\-Interface\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classhardware__interface_1_1JointStateInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ std\-::string $>$ {\bf get\-Joint\-Names} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the vector of joint names registered to this interface. \end{DoxyCompactList}\item 
+{\bf \-Joint\-State\-Handle} {\bf get\-Joint\-State\-Handle} (const std\-::string \&name) const 
+\begin{DoxyCompactList}\small\item\em \-Get a \doxyref{\-Joint\-State\-Handle}{p.}{classhardware__interface_1_1JointStateHandle} for accessing a joint's state. \end{DoxyCompactList}\item 
+void {\bf register\-Joint} (const std\-::string \&name, double $\ast$pos, double $\ast$vel, double $\ast$eff)
+\begin{DoxyCompactList}\small\item\em \-Register a new joint with this interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::map$<$ std\-::string, \*
+{\bf \-Joint\-State\-Handle} $>$ {\bf \-Handle\-Map}
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Handle\-Map} {\bf handle\-\_\-map\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Hardware interface to support reading the state of an array of joints. 
+
+\-This \doxyref{\-Hardware\-Interface}{p.}{classhardware__interface_1_1HardwareInterface} supports reading the state of an array of named joints, each of which has some position, velocity, and effort (force or torque). 
+
+\-Definition at line 72 of file joint\-\_\-state\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Typedef \-Documentation}
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Interface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}!\-Handle\-Map@{\-Handle\-Map}}
+\index{\-Handle\-Map@{\-Handle\-Map}!hardware_interface::JointStateInterface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}}
+\subsubsection[{\-Handle\-Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::map$<$std\-::string, {\bf \-Joint\-State\-Handle}$>$ {\bf hardware\-\_\-interface\-::\-Joint\-State\-Interface\-::\-Handle\-Map}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhardware__interface_1_1JointStateInterface_a16048cc6a84711b67f3fc60a2bdf920f}
+
+
+\-Definition at line 121 of file joint\-\_\-state\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Interface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}!get\-Joint\-Names@{get\-Joint\-Names}}
+\index{get\-Joint\-Names@{get\-Joint\-Names}!hardware_interface::JointStateInterface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}}
+\subsubsection[{get\-Joint\-Names}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ {\bf hardware\-\_\-interface\-::\-Joint\-State\-Interface\-::get\-Joint\-Names} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointStateInterface_a54b7d366141f8b111a9afa84b6776aa0}
+
+
+\-Get the vector of joint names registered to this interface. 
+
+
+
+\-Definition at line 76 of file joint\-\_\-state\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Interface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}!get\-Joint\-State\-Handle@{get\-Joint\-State\-Handle}}
+\index{get\-Joint\-State\-Handle@{get\-Joint\-State\-Handle}!hardware_interface::JointStateInterface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}}
+\subsubsection[{get\-Joint\-State\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Joint\-State\-Handle} {\bf hardware\-\_\-interface\-::\-Joint\-State\-Interface\-::get\-Joint\-State\-Handle} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointStateInterface_a734f7ffbb62522ff6201ce053ff471d9}
+
+
+\-Get a \doxyref{\-Joint\-State\-Handle}{p.}{classhardware__interface_1_1JointStateHandle} for accessing a joint's state. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-The name of the joint \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 110 of file joint\-\_\-state\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Interface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}!register\-Joint@{register\-Joint}}
+\index{register\-Joint@{register\-Joint}!hardware_interface::JointStateInterface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}}
+\subsubsection[{register\-Joint}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf hardware\-\_\-interface\-::\-Joint\-State\-Interface\-::register\-Joint} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{double $\ast$}]{pos, }
+\item[{double $\ast$}]{vel, }
+\item[{double $\ast$}]{eff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointStateInterface_a9b81f5830e05013199706d6e5ab98f69}
+
+
+\-Register a new joint with this interface. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-The name of the new joint \\
+\hline
+{\em pos} & \-A pointer to the storage for this joint's position \\
+\hline
+{\em vel} & \-A pointer to the storage for this joint's velocity \\
+\hline
+{\em eff} & \-A pointer to the storage for this joint's effort (force or torque) \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 95 of file joint\-\_\-state\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Interface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}!handle\-\_\-map\-\_\-@{handle\-\_\-map\-\_\-}}
+\index{handle\-\_\-map\-\_\-@{handle\-\_\-map\-\_\-}!hardware_interface::JointStateInterface@{hardware\-\_\-interface\-::\-Joint\-State\-Interface}}
+\subsubsection[{handle\-\_\-map\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Handle\-Map} {\bf hardware\-\_\-interface\-::\-Joint\-State\-Interface\-::handle\-\_\-map\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhardware__interface_1_1JointStateInterface_a3e0e78c4b74b1e501c036b498f7aef6e}
+
+
+\-Definition at line 122 of file joint\-\_\-state\-\_\-interface.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf joint\-\_\-state\-\_\-interface.\-h}\end{DoxyCompactItemize}

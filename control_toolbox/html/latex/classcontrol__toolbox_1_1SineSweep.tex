@@ -1,0 +1,200 @@
+\section{control\-\_\-toolbox\-:\-:\-Sine\-Sweep \-Class \-Reference}
+\label{classcontrol__toolbox_1_1SineSweep}\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+
+
+\-Generates a sine sweep for frequency analysis of a joint.  
+
+
+
+
+{\ttfamily \#include $<$sine\-\_\-sweep.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf init} (double start\-\_\-freq, double end\-\_\-freq, double duration, double amplitude)
+\begin{DoxyCompactList}\small\item\em \-Intializes everything and calculates the constants for the sweep. \end{DoxyCompactList}\item 
+{\bf \-Sine\-Sweep} ()
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+double {\bf update} (ros\-::\-Duration dt)
+\begin{DoxyCompactList}\small\item\em \-Update the \doxyref{\-Sine\-Sweep}{p.}{classcontrol__toolbox_1_1SineSweep} loop with nonuniform time step size. \end{DoxyCompactList}\item 
+{\bf $\sim$\-Sine\-Sweep} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf amplitude\-\_\-}
+\item 
+double {\bf cmd\-\_\-}
+\item 
+ros\-::\-Duration {\bf duration\-\_\-}
+\item 
+double {\bf end\-\_\-angular\-\_\-freq\-\_\-}
+\item 
+double {\bf \-K\-\_\-}
+\item 
+double {\bf \-L\-\_\-}
+\item 
+double {\bf start\-\_\-angular\-\_\-freq\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Generates a sine sweep for frequency analysis of a joint. 
+
+\-This class basically calculates the output for a sine sweep. \-Where the signal is a sine wave, whose frequency is exponentially increased from $\omega_1$ to $\omega_2$ over $T$ seconds.\par
+
+
+$s(n) = A \sin [ K(e^{\delta t/L} - 1) ]$ \par
+
+
+where\-:\par
+ $K = \frac{\omega_1T}{\ln \frac{\omega_2}{\omega_1} }$\par
+ $L = \frac{T}{\ln \frac{\omega_2}{\omega_1} }$.\par
+ 
+
+\-Definition at line 60 of file sine\-\_\-sweep.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!\-Sine\-Sweep@{\-Sine\-Sweep}}
+\index{\-Sine\-Sweep@{\-Sine\-Sweep}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{\-Sine\-Sweep}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::\-Sine\-Sweep} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1SineSweep_a3bdcfd4423242318206bd29a312111f2}
+
+
+\-Constructor. 
+
+
+
+\-Definition at line 42 of file sine\-\_\-sweep.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!$\sim$\-Sine\-Sweep@{$\sim$\-Sine\-Sweep}}
+\index{$\sim$\-Sine\-Sweep@{$\sim$\-Sine\-Sweep}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{$\sim$\-Sine\-Sweep}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::$\sim$\-Sine\-Sweep} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1SineSweep_a79e8b2ea3a13c24c1855305f0eb6e301}
+
+
+\-Destructor. 
+
+
+
+\-Definition at line 51 of file sine\-\_\-sweep.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!init@{init}}
+\index{init@{init}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::init} (
+\begin{DoxyParamCaption}
+\item[{double}]{start\-\_\-freq, }
+\item[{double}]{end\-\_\-freq, }
+\item[{double}]{duration, }
+\item[{double}]{amplitude}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1SineSweep_a6c5e5561f9d12ddba66de436ddb0aa51}
+
+
+\-Intializes everything and calculates the constants for the sweep. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em start\-\_\-freq} & \-Start frequency of the sweep, $\omega_1$ . \\
+\hline
+{\em end\-\_\-freq} & \-End frequency of the sweep, $\omega_2$. \\
+\hline
+{\em duration} & \-The duration of the sweep, $T$. \\
+\hline
+{\em amplitude} & \-The amplitude of the sweep, $A$. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 55 of file sine\-\_\-sweep.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!update@{update}}
+\index{update@{update}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::update} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Duration}]{dt}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1SineSweep_a2624773e71072a3c1e11c2fd7d67dd84}
+
+
+\-Update the \doxyref{\-Sine\-Sweep}{p.}{classcontrol__toolbox_1_1SineSweep} loop with nonuniform time step size. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em dt} & \-Change in time since last call \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 78 of file sine\-\_\-sweep.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!amplitude\-\_\-@{amplitude\-\_\-}}
+\index{amplitude\-\_\-@{amplitude\-\_\-}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{amplitude\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::amplitude\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1SineSweep_a496a183da48d7864d11b8da1cf16a852}
+\-Amplitude of the sweep. 
+
+\-Definition at line 92 of file sine\-\_\-sweep.\-h.
+
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!cmd\-\_\-@{cmd\-\_\-}}
+\index{cmd\-\_\-@{cmd\-\_\-}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{cmd\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::cmd\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1SineSweep_af893092f128adf807f8462acd0fe5f7f}
+\-Command to send. 
+
+\-Definition at line 98 of file sine\-\_\-sweep.\-h.
+
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!duration\-\_\-@{duration\-\_\-}}
+\index{duration\-\_\-@{duration\-\_\-}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{duration\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Duration {\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::duration\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1SineSweep_aa229557e815a302ce450ccf1ebbf9a76}
+\-Duration of the sweep. 
+
+\-Definition at line 93 of file sine\-\_\-sweep.\-h.
+
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!end\-\_\-angular\-\_\-freq\-\_\-@{end\-\_\-angular\-\_\-freq\-\_\-}}
+\index{end\-\_\-angular\-\_\-freq\-\_\-@{end\-\_\-angular\-\_\-freq\-\_\-}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{end\-\_\-angular\-\_\-freq\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::end\-\_\-angular\-\_\-freq\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1SineSweep_aba1e4b38e0d06a62e921796be710eb36}
+\-End angular frequency of the sweep. 
+
+\-Definition at line 95 of file sine\-\_\-sweep.\-h.
+
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!\-K\-\_\-@{\-K\-\_\-}}
+\index{\-K\-\_\-@{\-K\-\_\-}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{\-K\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::\-K\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1SineSweep_a128e37cfb0065933b5226fa836e89633}
+\-Constant $K$. 
+
+\-Definition at line 96 of file sine\-\_\-sweep.\-h.
+
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!\-L\-\_\-@{\-L\-\_\-}}
+\index{\-L\-\_\-@{\-L\-\_\-}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{\-L\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::\-L\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1SineSweep_a02e8aeb15926167e7643cf5d6221b08c}
+\-Constant $L$. 
+
+\-Definition at line 97 of file sine\-\_\-sweep.\-h.
+
+\index{control\-\_\-toolbox\-::\-Sine\-Sweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}!start\-\_\-angular\-\_\-freq\-\_\-@{start\-\_\-angular\-\_\-freq\-\_\-}}
+\index{start\-\_\-angular\-\_\-freq\-\_\-@{start\-\_\-angular\-\_\-freq\-\_\-}!control_toolbox::SineSweep@{control\-\_\-toolbox\-::\-Sine\-Sweep}}
+\subsubsection[{start\-\_\-angular\-\_\-freq\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sine\-Sweep\-::start\-\_\-angular\-\_\-freq\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1SineSweep_aac8f60f855cce72784199b97aad146b4}
+\-Start angular frequency of the sweep. 
+
+\-Definition at line 94 of file sine\-\_\-sweep.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf sine\-\_\-sweep.\-h}\item 
+{\bf sine\-\_\-sweep.\-cpp}\end{DoxyCompactItemize}

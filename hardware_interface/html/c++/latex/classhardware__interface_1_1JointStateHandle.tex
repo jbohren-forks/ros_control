@@ -1,0 +1,165 @@
+\section{hardware\-\_\-interface\-:\-:\-Joint\-State\-Handle \-Class \-Reference}
+\label{classhardware__interface_1_1JointStateHandle}\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+
+
+\-A handle used to read the state of a single joint.  
+
+
+
+
+{\ttfamily \#include $<$joint\-\_\-state\-\_\-interface.\-h$>$}
+
+
+
+\-Inheritance diagram for hardware\-\_\-interface\-:\-:\-Joint\-State\-Handle\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classhardware__interface_1_1JointStateHandle__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf get\-Effort} () const 
+\item 
+std\-::string {\bf get\-Name} () const 
+\item 
+double {\bf get\-Position} () const 
+\item 
+double {\bf get\-Velocity} () const 
+\item 
+{\bf \-Joint\-State\-Handle} ()
+\item 
+{\bf \-Joint\-State\-Handle} (const std\-::string \&name, const double $\ast$pos, const double $\ast$vel, const double $\ast$eff)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const double $\ast$ {\bf eff\-\_\-}
+\item 
+std\-::string {\bf name\-\_\-}
+\item 
+const double $\ast$ {\bf pos\-\_\-}
+\item 
+const double $\ast$ {\bf vel\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A handle used to read the state of a single joint. 
+
+\-Definition at line 44 of file joint\-\_\-state\-\_\-interface.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!\-Joint\-State\-Handle@{\-Joint\-State\-Handle}}
+\index{\-Joint\-State\-Handle@{\-Joint\-State\-Handle}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{\-Joint\-State\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::\-Joint\-State\-Handle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointStateHandle_a7bd20af3c9edd0ce90e21ed7e0dc91f7}
+
+
+\-Definition at line 47 of file joint\-\_\-state\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!\-Joint\-State\-Handle@{\-Joint\-State\-Handle}}
+\index{\-Joint\-State\-Handle@{\-Joint\-State\-Handle}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{\-Joint\-State\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::\-Joint\-State\-Handle} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{const double $\ast$}]{pos, }
+\item[{const double $\ast$}]{vel, }
+\item[{const double $\ast$}]{eff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointStateHandle_a329e5e8b72cb2b4c0fd23e28b7b24a2b}
+
+
+\-Definition at line 48 of file joint\-\_\-state\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!get\-Effort@{get\-Effort}}
+\index{get\-Effort@{get\-Effort}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{get\-Effort}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::get\-Effort} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointStateHandle_a8639df80b2cf72db487a9275b5714a06}
+
+
+\-Definition at line 55 of file joint\-\_\-state\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::get\-Name} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointStateHandle_a660b5cb37f7831b4fcf96b5c0cded55c}
+
+
+\-Definition at line 52 of file joint\-\_\-state\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::get\-Position} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointStateHandle_aa04f165441281b570c31b104378ab8e6}
+
+
+\-Definition at line 53 of file joint\-\_\-state\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!get\-Velocity@{get\-Velocity}}
+\index{get\-Velocity@{get\-Velocity}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{get\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::get\-Velocity} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointStateHandle_a7c2cfc140d50fd092d51bd0e825bc4a0}
+
+
+\-Definition at line 54 of file joint\-\_\-state\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!eff\-\_\-@{eff\-\_\-}}
+\index{eff\-\_\-@{eff\-\_\-}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{eff\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const double$\ast$ {\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::eff\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhardware__interface_1_1JointStateHandle_a0ec1a0c886b7dacc616090bef82f4c80}
+
+
+\-Definition at line 61 of file joint\-\_\-state\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!name\-\_\-@{name\-\_\-}}
+\index{name\-\_\-@{name\-\_\-}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{name\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::name\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhardware__interface_1_1JointStateHandle_a907ee3caeb0ee79275ca1aabe13a3802}
+
+
+\-Definition at line 58 of file joint\-\_\-state\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!pos\-\_\-@{pos\-\_\-}}
+\index{pos\-\_\-@{pos\-\_\-}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{pos\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const double$\ast$ {\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::pos\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhardware__interface_1_1JointStateHandle_ab8550eb758f049d1a3dcd7c0fb7cc185}
+
+
+\-Definition at line 59 of file joint\-\_\-state\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-State\-Handle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}!vel\-\_\-@{vel\-\_\-}}
+\index{vel\-\_\-@{vel\-\_\-}!hardware_interface::JointStateHandle@{hardware\-\_\-interface\-::\-Joint\-State\-Handle}}
+\subsubsection[{vel\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const double$\ast$ {\bf hardware\-\_\-interface\-::\-Joint\-State\-Handle\-::vel\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhardware__interface_1_1JointStateHandle_aaa0ac8272dee92ee297cbc49f8553991}
+
+
+\-Definition at line 60 of file joint\-\_\-state\-\_\-interface.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf joint\-\_\-state\-\_\-interface.\-h}\end{DoxyCompactItemize}

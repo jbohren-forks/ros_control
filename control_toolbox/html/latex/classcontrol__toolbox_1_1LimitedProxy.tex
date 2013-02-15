@@ -1,0 +1,235 @@
+\section{control\-\_\-toolbox\-:\-:\-Limited\-Proxy \-Class \-Reference}
+\label{classcontrol__toolbox_1_1LimitedProxy}\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+
+
+{\ttfamily \#include $<$limited\-\_\-proxy.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Limited\-Proxy} ()
+\item 
+void {\bf reset} (double pos\-\_\-act, double vel\-\_\-act)
+\item 
+double {\bf update} (double pos\-\_\-des, double vel\-\_\-des, double acc\-\_\-des, double pos\-\_\-act, double vel\-\_\-act, double dt)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf acc\-\_\-converge\-\_\-}
+\item 
+double {\bf effort\-\_\-limit\-\_\-}
+\item 
+double {\bf \-Ficl\-\_\-}
+\item 
+double {\bf \-Kd\-\_\-}
+\item 
+double {\bf \-Ki\-\_\-}
+\item 
+double {\bf \-Kp\-\_\-}
+\item 
+double {\bf lambda\-\_\-proxy\-\_\-}
+\item 
+double {\bf mass\-\_\-}
+\item 
+double {\bf pos\-\_\-lower\-\_\-limit\-\_\-}
+\item 
+double {\bf pos\-\_\-upper\-\_\-limit\-\_\-}
+\item 
+double {\bf vel\-\_\-limit\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf last\-\_\-int\-\_\-error\-\_\-}
+\item 
+double {\bf last\-\_\-pos\-\_\-error\-\_\-}
+\item 
+double {\bf last\-\_\-proxy\-\_\-acc\-\_\-}
+\item 
+double {\bf last\-\_\-proxy\-\_\-pos\-\_\-}
+\item 
+double {\bf last\-\_\-proxy\-\_\-vel\-\_\-}
+\item 
+double {\bf last\-\_\-vel\-\_\-error\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 39 of file limited\-\_\-proxy.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!\-Limited\-Proxy@{\-Limited\-Proxy}}
+\index{\-Limited\-Proxy@{\-Limited\-Proxy}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{\-Limited\-Proxy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::\-Limited\-Proxy} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontrol__toolbox_1_1LimitedProxy_a7b81a8fbfb0f25c4838164a8a73377f5}
+
+
+\-Definition at line 56 of file limited\-\_\-proxy.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!reset@{reset}}
+\index{reset@{reset}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::reset} (
+\begin{DoxyParamCaption}
+\item[{double}]{pos\-\_\-act, }
+\item[{double}]{vel\-\_\-act}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1LimitedProxy_a6ae62d76967b9a9117653c3e39f1048e}
+
+
+\-Definition at line 137 of file limited\-\_\-proxy.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!update@{update}}
+\index{update@{update}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::update} (
+\begin{DoxyParamCaption}
+\item[{double}]{pos\-\_\-des, }
+\item[{double}]{vel\-\_\-des, }
+\item[{double}]{acc\-\_\-des, }
+\item[{double}]{pos\-\_\-act, }
+\item[{double}]{vel\-\_\-act, }
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1LimitedProxy_a62434d769b752b06ede420c514f0ec6b}
+
+
+\-Definition at line 156 of file limited\-\_\-proxy.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!acc\-\_\-converge\-\_\-@{acc\-\_\-converge\-\_\-}}
+\index{acc\-\_\-converge\-\_\-@{acc\-\_\-converge\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{acc\-\_\-converge\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::acc\-\_\-converge\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_ac2864d216dc9cafb0a545422b77a5ea4}
+
+
+\-Definition at line 53 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!effort\-\_\-limit\-\_\-@{effort\-\_\-limit\-\_\-}}
+\index{effort\-\_\-limit\-\_\-@{effort\-\_\-limit\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{effort\-\_\-limit\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::effort\-\_\-limit\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_ae1565bc65562a69a8a98413f6ea1836c}
+
+
+\-Definition at line 48 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!\-Ficl\-\_\-@{\-Ficl\-\_\-}}
+\index{\-Ficl\-\_\-@{\-Ficl\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{\-Ficl\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::\-Ficl\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_af9623015d5807c225cf2f994b04c2ee1}
+
+
+\-Definition at line 47 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!\-Kd\-\_\-@{\-Kd\-\_\-}}
+\index{\-Kd\-\_\-@{\-Kd\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{\-Kd\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::\-Kd\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_a477eadf723c68624f0a08cab1dcc66d0}
+
+
+\-Definition at line 44 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!\-Ki\-\_\-@{\-Ki\-\_\-}}
+\index{\-Ki\-\_\-@{\-Ki\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{\-Ki\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::\-Ki\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_a26af4eb37b8d0e2604a17dc34d225c87}
+
+
+\-Definition at line 46 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!\-Kp\-\_\-@{\-Kp\-\_\-}}
+\index{\-Kp\-\_\-@{\-Kp\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{\-Kp\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::\-Kp\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_a4f8d2aa290539b3907b721055ef79c8e}
+
+
+\-Definition at line 45 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!lambda\-\_\-proxy\-\_\-@{lambda\-\_\-proxy\-\_\-}}
+\index{lambda\-\_\-proxy\-\_\-@{lambda\-\_\-proxy\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{lambda\-\_\-proxy\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::lambda\-\_\-proxy\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_aaf625b6ef9f370cc27cab4c6f60863d9}
+
+
+\-Definition at line 52 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!last\-\_\-int\-\_\-error\-\_\-@{last\-\_\-int\-\_\-error\-\_\-}}
+\index{last\-\_\-int\-\_\-error\-\_\-@{last\-\_\-int\-\_\-error\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{last\-\_\-int\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::last\-\_\-int\-\_\-error\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1LimitedProxy_adb795e1b9f736e03cb17a1d3f6d3b9c7}
+
+
+\-Definition at line 77 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!last\-\_\-pos\-\_\-error\-\_\-@{last\-\_\-pos\-\_\-error\-\_\-}}
+\index{last\-\_\-pos\-\_\-error\-\_\-@{last\-\_\-pos\-\_\-error\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{last\-\_\-pos\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::last\-\_\-pos\-\_\-error\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1LimitedProxy_af714f0aaf0e39f730845b997b667160e}
+
+
+\-Definition at line 76 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!last\-\_\-proxy\-\_\-acc\-\_\-@{last\-\_\-proxy\-\_\-acc\-\_\-}}
+\index{last\-\_\-proxy\-\_\-acc\-\_\-@{last\-\_\-proxy\-\_\-acc\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{last\-\_\-proxy\-\_\-acc\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::last\-\_\-proxy\-\_\-acc\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1LimitedProxy_a7a5b6b18b8e2f88041ed9e6c72ca6b82}
+
+
+\-Definition at line 73 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!last\-\_\-proxy\-\_\-pos\-\_\-@{last\-\_\-proxy\-\_\-pos\-\_\-}}
+\index{last\-\_\-proxy\-\_\-pos\-\_\-@{last\-\_\-proxy\-\_\-pos\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{last\-\_\-proxy\-\_\-pos\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::last\-\_\-proxy\-\_\-pos\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1LimitedProxy_ae9e7a250f38573784cd4eca7617addde}
+
+
+\-Definition at line 71 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!last\-\_\-proxy\-\_\-vel\-\_\-@{last\-\_\-proxy\-\_\-vel\-\_\-}}
+\index{last\-\_\-proxy\-\_\-vel\-\_\-@{last\-\_\-proxy\-\_\-vel\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{last\-\_\-proxy\-\_\-vel\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::last\-\_\-proxy\-\_\-vel\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1LimitedProxy_a4438855f43ad8f345c4a07e074e55be9}
+
+
+\-Definition at line 72 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!last\-\_\-vel\-\_\-error\-\_\-@{last\-\_\-vel\-\_\-error\-\_\-}}
+\index{last\-\_\-vel\-\_\-error\-\_\-@{last\-\_\-vel\-\_\-error\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{last\-\_\-vel\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::last\-\_\-vel\-\_\-error\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1LimitedProxy_a21281ae1dfa6ac5dc474d359e3e4d651}
+
+
+\-Definition at line 75 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!mass\-\_\-@{mass\-\_\-}}
+\index{mass\-\_\-@{mass\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{mass\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::mass\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_a618d59c9c9f65a6e8e0847660505b988}
+
+
+\-Definition at line 43 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!pos\-\_\-lower\-\_\-limit\-\_\-@{pos\-\_\-lower\-\_\-limit\-\_\-}}
+\index{pos\-\_\-lower\-\_\-limit\-\_\-@{pos\-\_\-lower\-\_\-limit\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{pos\-\_\-lower\-\_\-limit\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::pos\-\_\-lower\-\_\-limit\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_a4f02ba840cb23eec1ec797f0f950958c}
+
+
+\-Definition at line 51 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!pos\-\_\-upper\-\_\-limit\-\_\-@{pos\-\_\-upper\-\_\-limit\-\_\-}}
+\index{pos\-\_\-upper\-\_\-limit\-\_\-@{pos\-\_\-upper\-\_\-limit\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{pos\-\_\-upper\-\_\-limit\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::pos\-\_\-upper\-\_\-limit\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_a5611fbbca81ce96bc6cee791182e2c43}
+
+
+\-Definition at line 50 of file limited\-\_\-proxy.\-h.
+
+\index{control\-\_\-toolbox\-::\-Limited\-Proxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}!vel\-\_\-limit\-\_\-@{vel\-\_\-limit\-\_\-}}
+\index{vel\-\_\-limit\-\_\-@{vel\-\_\-limit\-\_\-}!control_toolbox::LimitedProxy@{control\-\_\-toolbox\-::\-Limited\-Proxy}}
+\subsubsection[{vel\-\_\-limit\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Limited\-Proxy\-::vel\-\_\-limit\-\_\-}}\label{classcontrol__toolbox_1_1LimitedProxy_abb1ce3f702026a9c40717de3022d788e}
+
+
+\-Definition at line 49 of file limited\-\_\-proxy.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf limited\-\_\-proxy.\-h}\item 
+{\bf limited\-\_\-proxy.\-cpp}\end{DoxyCompactItemize}

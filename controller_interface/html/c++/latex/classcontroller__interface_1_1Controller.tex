@@ -1,0 +1,169 @@
+\section{controller\-\_\-interface\-:\-:\-Controller$<$ \-T $>$ \-Class \-Template \-Reference}
+\label{classcontroller__interface_1_1Controller}\index{controller\-\_\-interface\-::\-Controller$<$ T $>$@{controller\-\_\-interface\-::\-Controller$<$ T $>$}}
+
+
+\-Controller with a specific hardware interface  
+
+
+
+
+{\ttfamily \#include $<$controller.\-h$>$}
+
+
+
+\-Inheritance diagram for controller\-\_\-interface\-:\-:\-Controller$<$ \-T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classcontroller__interface_1_1Controller__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controller} ()
+\item 
+virtual bool {\bf init} (\-T $\ast$hw, ros\-::\-Node\-Handle \&n)=0
+\begin{DoxyCompactList}\small\item\em \-The init function is called to initialize the controller from a non-\/realtime thread with a pointer to the hardware interface, itself, instead of a pointer to a \-Robot\-H\-W. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Controller} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::string {\bf get\-Hardware\-Interface\-Type} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the name of this controller's hardware interface type. \end{DoxyCompactList}\item 
+virtual bool {\bf init\-Request} (hardware\-\_\-interface\-::\-Robot\-H\-W $\ast$robot\-\_\-hw, ros\-::\-Node\-Handle \&n, std\-::set$<$ std\-::string $>$ \&claimed\-\_\-resources)
+\begin{DoxyCompactList}\small\item\em \-Initialize the controller from a \-Robot\-H\-W pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controller} (const {\bf \-Controller}$<$ \-T $>$ \&c)
+\item 
+{\bf \-Controller}$<$ \-T $>$ \& {\bf operator=} (const {\bf \-Controller}$<$ \-T $>$ \&c)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class \-T$>$class controller\-\_\-interface\-::\-Controller$<$ T $>$}
+
+\-Controller with a specific hardware interface 
+
+
+\begin{DoxyTemplParams}{\-Template Parameters}
+{\em \-T} & \-The hardware interface type used by this controller. \-This enforces semantic compatibility between the controller and the hardware it's meant to control. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\-Definition at line 52 of file controller.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{controller\-\_\-interface\-::\-Controller@{controller\-\_\-interface\-::\-Controller}!\-Controller@{\-Controller}}
+\index{\-Controller@{\-Controller}!controller_interface::Controller@{controller\-\_\-interface\-::\-Controller}}
+\subsubsection[{\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ {\bf controller\-\_\-interface\-::\-Controller}$<$ \-T $>$\-::{\bf \-Controller} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontroller__interface_1_1Controller_a4e39de25194d8d1a5bd80586ad36fd51}
+
+
+\-Definition at line 55 of file controller.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller@{controller\-\_\-interface\-::\-Controller}!$\sim$\-Controller@{$\sim$\-Controller}}
+\index{$\sim$\-Controller@{$\sim$\-Controller}!controller_interface::Controller@{controller\-\_\-interface\-::\-Controller}}
+\subsubsection[{$\sim$\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ virtual {\bf controller\-\_\-interface\-::\-Controller}$<$ \-T $>$\-::$\sim${\bf \-Controller} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcontroller__interface_1_1Controller_a19b34fc88efcc0dd1074ff926f6bc6dd}
+
+
+\-Definition at line 56 of file controller.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller@{controller\-\_\-interface\-::\-Controller}!\-Controller@{\-Controller}}
+\index{\-Controller@{\-Controller}!controller_interface::Controller@{controller\-\_\-interface\-::\-Controller}}
+\subsubsection[{\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ {\bf controller\-\_\-interface\-::\-Controller}$<$ \-T $>$\-::{\bf \-Controller} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Controller}$<$ \-T $>$ \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__interface_1_1Controller_ae89491001a6a543e4da414592ba11407}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{controller\-\_\-interface\-::\-Controller@{controller\-\_\-interface\-::\-Controller}!get\-Hardware\-Interface\-Type@{get\-Hardware\-Interface\-Type}}
+\index{get\-Hardware\-Interface\-Type@{get\-Hardware\-Interface\-Type}!controller_interface::Controller@{controller\-\_\-interface\-::\-Controller}}
+\subsubsection[{get\-Hardware\-Interface\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ virtual std\-::string {\bf controller\-\_\-interface\-::\-Controller}$<$ \-T $>$\-::{\bf get\-Hardware\-Interface\-Type} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classcontroller__interface_1_1Controller_ac8bf6b9720c7c9d2276d5e63ba3e810d}
+
+
+\-Get the name of this controller's hardware interface type. 
+
+
+
+\-Implements {\bf controller\-\_\-interface\-::\-Controller\-Base} \doxyref{}{p.}{classcontroller__interface_1_1ControllerBase_aa2908562c2d435458ae257d7431ab198}.
+
+
+
+\-Definition at line 115 of file controller.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller@{controller\-\_\-interface\-::\-Controller}!init@{init}}
+\index{init@{init}!controller_interface::Controller@{controller\-\_\-interface\-::\-Controller}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ virtual bool {\bf controller\-\_\-interface\-::\-Controller}$<$ \-T $>$\-::{\bf init} (
+\begin{DoxyParamCaption}
+\item[{\-T $\ast$}]{hw, }
+\item[{ros\-::\-Node\-Handle \&}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcontroller__interface_1_1Controller_a931a00f90258a3cf692db19624f5b47d}
+
+
+\-The init function is called to initialize the controller from a non-\/realtime thread with a pointer to the hardware interface, itself, instead of a pointer to a \-Robot\-H\-W. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em hw} & \-The specific hardware interface used by this controller.\\
+\hline
+{\em n} & \-A \-Node\-Handle in the namespace from which the controller should read its configuration, and where it should set up its \-R\-O\-S interface.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-True if initialization was successful and the controller is ready to be started. 
+\end{DoxyReturn}
+\index{controller\-\_\-interface\-::\-Controller@{controller\-\_\-interface\-::\-Controller}!init\-Request@{init\-Request}}
+\index{init\-Request@{init\-Request}!controller_interface::Controller@{controller\-\_\-interface\-::\-Controller}}
+\subsubsection[{init\-Request}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ virtual bool {\bf controller\-\_\-interface\-::\-Controller}$<$ \-T $>$\-::{\bf init\-Request} (
+\begin{DoxyParamCaption}
+\item[{hardware\-\_\-interface\-::\-Robot\-H\-W $\ast$}]{robot\-\_\-hw, }
+\item[{ros\-::\-Node\-Handle \&}]{n, }
+\item[{std\-::set$<$ std\-::string $>$ \&}]{claimed\-\_\-resources}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classcontroller__interface_1_1Controller_a601fbae7816bebb3da861a84c9158985}
+
+
+\-Initialize the controller from a \-Robot\-H\-W pointer. 
+
+\-This calls \doxyref{init}{p.}{classcontroller__interface_1_1Controller_a931a00f90258a3cf692db19624f5b47d} with the hardware interface for this controller if it can extract the correct interface from {\ttfamily robot\-\_\-hw}. 
+
+\-Implements {\bf controller\-\_\-interface\-::\-Controller\-Base} \doxyref{}{p.}{classcontroller__interface_1_1ControllerBase_a8237443cfaa485e71f39adc45fad4089}.
+
+
+
+\-Definition at line 81 of file controller.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller@{controller\-\_\-interface\-::\-Controller}!operator=@{operator=}}
+\index{operator=@{operator=}!controller_interface::Controller@{controller\-\_\-interface\-::\-Controller}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ {\bf \-Controller}$<$\-T$>$\& {\bf controller\-\_\-interface\-::\-Controller}$<$ \-T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Controller}$<$ \-T $>$ \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__interface_1_1Controller_acbf45ec6111fb0128634a92cbec29c39}
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf controller.\-h}\end{DoxyCompactItemize}

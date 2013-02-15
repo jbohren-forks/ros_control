@@ -1,0 +1,148 @@
+\section{control\-\_\-toolbox \-Namespace \-Reference}
+\label{namespacecontrol__toolbox}\index{control\-\_\-toolbox@{control\-\_\-toolbox}}
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf srv}
+\end{DoxyCompactItemize}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf \-Dither}
+\begin{DoxyCompactList}\small\item\em \-Gives white noise at specified amplitude. \end{DoxyCompactList}\item 
+class {\bf \-Limited\-Proxy}
+\item 
+class {\bf \-Pid}
+\begin{DoxyCompactList}\small\item\em \-A basic pid class. \end{DoxyCompactList}\item 
+class {\bf \-Pid\-Gains\-Setter}
+\begin{DoxyCompactList}\small\item\em \-Sets up services for quickly changing the gains for a \doxyref{control\-\_\-toolbox\-::\-Pid}{p.}{classcontrol__toolbox_1_1Pid} \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} object. \end{DoxyCompactList}\item 
+struct {\bf \-Set\-Pid\-Gains}
+\item 
+struct {\bf \-Set\-Pid\-Gains\-Request\-\_\-}
+\item 
+struct {\bf \-Set\-Pid\-Gains\-Response\-\_\-}
+\item 
+class {\bf \-Sine\-Sweep}
+\begin{DoxyCompactList}\small\item\em \-Generates a sine sweep for frequency analysis of a joint. \end{DoxyCompactList}\item 
+class {\bf \-Sinusoid}
+\begin{DoxyCompactList}\small\item\em \-A basic sine class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \*
+\-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Request\-\_\-}\*
+$<$ std\-::allocator$<$ void $>$ $>$ {\bf \-Set\-Pid\-Gains\-Request}
+\item 
+typedef boost\-::shared\-\_\-ptr\*
+$<$ \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Request} \*
+const  $>$ {\bf \-Set\-Pid\-Gains\-Request\-Const\-Ptr}
+\item 
+typedef boost\-::shared\-\_\-ptr\*
+$<$ \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Request} $>$ {\bf \-Set\-Pid\-Gains\-Request\-Ptr}
+\item 
+typedef \*
+\-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Response\-\_\-}\*
+$<$ std\-::allocator$<$ void $>$ $>$ {\bf \-Set\-Pid\-Gains\-Response}
+\item 
+typedef boost\-::shared\-\_\-ptr\*
+$<$ \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Response} \*
+const  $>$ {\bf \-Set\-Pid\-Gains\-Response\-Const\-Ptr}
+\item 
+typedef boost\-::shared\-\_\-ptr\*
+$<$ \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Response} $>$ {\bf \-Set\-Pid\-Gains\-Response\-Ptr}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf calc\-Dynamics1storder} (double \&a, double \&dadv, double v, double lam, double acon)
+\item 
+static void {\bf calc\-Dynamics2ndorder} (double \&a, double \&dadp, double \&dadv, double p, double v, double lam, double acon)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+$<$ \begin{DoxyAuthor}{\-Author}
+\-Kevin \-Watts
+
+\-Mrinal \-Kalakrishnan 
+\end{DoxyAuthor}
+
+
+\subsection{\-Typedef \-Documentation}
+\index{control\-\_\-toolbox@{control\-\_\-toolbox}!\-Set\-Pid\-Gains\-Request@{\-Set\-Pid\-Gains\-Request}}
+\index{\-Set\-Pid\-Gains\-Request@{\-Set\-Pid\-Gains\-Request}!control_toolbox@{control\-\_\-toolbox}}
+\subsubsection[{\-Set\-Pid\-Gains\-Request}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Request\-\_\-}$<$std\-::allocator$<$void$>$ $>$ {\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Request}}\label{namespacecontrol__toolbox_a6516f42b497a71a4a210087707fe7630}
+
+
+\-Definition at line 61 of file \-Set\-Pid\-Gains.\-h.
+
+\index{control\-\_\-toolbox@{control\-\_\-toolbox}!\-Set\-Pid\-Gains\-Request\-Const\-Ptr@{\-Set\-Pid\-Gains\-Request\-Const\-Ptr}}
+\index{\-Set\-Pid\-Gains\-Request\-Const\-Ptr@{\-Set\-Pid\-Gains\-Request\-Const\-Ptr}!control_toolbox@{control\-\_\-toolbox}}
+\subsubsection[{\-Set\-Pid\-Gains\-Request\-Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\-::shared\-\_\-ptr$<$ \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Request} const$>$ {\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Request\-Const\-Ptr}}\label{namespacecontrol__toolbox_a35408586f8e58fe9a23d4b02396cbf72}
+
+
+\-Definition at line 64 of file \-Set\-Pid\-Gains.\-h.
+
+\index{control\-\_\-toolbox@{control\-\_\-toolbox}!\-Set\-Pid\-Gains\-Request\-Ptr@{\-Set\-Pid\-Gains\-Request\-Ptr}}
+\index{\-Set\-Pid\-Gains\-Request\-Ptr@{\-Set\-Pid\-Gains\-Request\-Ptr}!control_toolbox@{control\-\_\-toolbox}}
+\subsubsection[{\-Set\-Pid\-Gains\-Request\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\-::shared\-\_\-ptr$<$ \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Request}$>$ {\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Request\-Ptr}}\label{namespacecontrol__toolbox_a358a7159cbcc8f2fca4e935e38e51e9b}
+
+
+\-Definition at line 63 of file \-Set\-Pid\-Gains.\-h.
+
+\index{control\-\_\-toolbox@{control\-\_\-toolbox}!\-Set\-Pid\-Gains\-Response@{\-Set\-Pid\-Gains\-Response}}
+\index{\-Set\-Pid\-Gains\-Response@{\-Set\-Pid\-Gains\-Response}!control_toolbox@{control\-\_\-toolbox}}
+\subsubsection[{\-Set\-Pid\-Gains\-Response}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Response\-\_\-}$<$std\-::allocator$<$void$>$ $>$ {\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Response}}\label{namespacecontrol__toolbox_aab263eb4f7cfffba04695b443bf36cd5}
+
+
+\-Definition at line 84 of file \-Set\-Pid\-Gains.\-h.
+
+\index{control\-\_\-toolbox@{control\-\_\-toolbox}!\-Set\-Pid\-Gains\-Response\-Const\-Ptr@{\-Set\-Pid\-Gains\-Response\-Const\-Ptr}}
+\index{\-Set\-Pid\-Gains\-Response\-Const\-Ptr@{\-Set\-Pid\-Gains\-Response\-Const\-Ptr}!control_toolbox@{control\-\_\-toolbox}}
+\subsubsection[{\-Set\-Pid\-Gains\-Response\-Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\-::shared\-\_\-ptr$<$ \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Response} const$>$ {\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Response\-Const\-Ptr}}\label{namespacecontrol__toolbox_a78544db5e5eb8b7551030a498f95e87f}
+
+
+\-Definition at line 87 of file \-Set\-Pid\-Gains.\-h.
+
+\index{control\-\_\-toolbox@{control\-\_\-toolbox}!\-Set\-Pid\-Gains\-Response\-Ptr@{\-Set\-Pid\-Gains\-Response\-Ptr}}
+\index{\-Set\-Pid\-Gains\-Response\-Ptr@{\-Set\-Pid\-Gains\-Response\-Ptr}!control_toolbox@{control\-\_\-toolbox}}
+\subsubsection[{\-Set\-Pid\-Gains\-Response\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\-::shared\-\_\-ptr$<$ \-::{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Response}$>$ {\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-Response\-Ptr}}\label{namespacecontrol__toolbox_a60994219e6251998e979be0573254c78}
+
+
+\-Definition at line 86 of file \-Set\-Pid\-Gains.\-h.
+
+
+
+\subsection{\-Function \-Documentation}
+\index{control\-\_\-toolbox@{control\-\_\-toolbox}!calc\-Dynamics1storder@{calc\-Dynamics1storder}}
+\index{calc\-Dynamics1storder@{calc\-Dynamics1storder}!control_toolbox@{control\-\_\-toolbox}}
+\subsubsection[{calc\-Dynamics1storder}]{\setlength{\rightskip}{0pt plus 5cm}static void {\bf control\-\_\-toolbox\-::calc\-Dynamics1storder} (
+\begin{DoxyParamCaption}
+\item[{double \&}]{a, }
+\item[{double \&}]{dadv, }
+\item[{double}]{v, }
+\item[{double}]{lam, }
+\item[{double}]{acon}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{namespacecontrol__toolbox_a8c89711b87d240ec8c6043453884a153}
+
+
+\-Definition at line 123 of file limited\-\_\-proxy.\-cpp.
+
+\index{control\-\_\-toolbox@{control\-\_\-toolbox}!calc\-Dynamics2ndorder@{calc\-Dynamics2ndorder}}
+\index{calc\-Dynamics2ndorder@{calc\-Dynamics2ndorder}!control_toolbox@{control\-\_\-toolbox}}
+\subsubsection[{calc\-Dynamics2ndorder}]{\setlength{\rightskip}{0pt plus 5cm}static void {\bf control\-\_\-toolbox\-::calc\-Dynamics2ndorder} (
+\begin{DoxyParamCaption}
+\item[{double \&}]{a, }
+\item[{double \&}]{dadp, }
+\item[{double \&}]{dadv, }
+\item[{double}]{p, }
+\item[{double}]{v, }
+\item[{double}]{lam, }
+\item[{double}]{acon}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{namespacecontrol__toolbox_a747f96feedd6efed7a4e4de54516b620}
+
+
+\-Definition at line 69 of file limited\-\_\-proxy.\-cpp.
+

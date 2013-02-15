@@ -1,0 +1,16 @@
+\form#0:$command = -p_{term} - i_{term} - d_{term} $
+\form#1:$ p_{term} = p_{gain} * p_{error} $
+\form#2:$ i_{term} = i_{term} + \int{i_{gain} * p_{error} * dt} $
+\form#3:$ d_{term} = d_{gain} * d_{error} $
+\form#4:$ d_{error} = (p_{error} - p_{error last}) / dt $
+\form#5:$ p_{error} = p_{state} - p_{target} $
+\form#6:$i_{term}$
+\form#7:$\omega_1$
+\form#8:$\omega_2$
+\form#9:$T$
+\form#10:$s(n) = A \sin [ K(e^{\delta t/L} - 1) ]$
+\form#11:$K = \frac{\omega_1T}{\ln \frac{\omega_2}{\omega_1} }$
+\form#12:$L = \frac{T}{\ln \frac{\omega_2}{\omega_1} }$
+\form#13:$A$
+\form#14:$K$
+\form#15:$L$

@@ -1,0 +1,153 @@
+\section{controller\-\_\-manager\-:\-:\-Controller\-Loader$<$ \-T $>$ \-Class \-Template \-Reference}
+\label{classcontroller__manager_1_1ControllerLoader}\index{controller\-\_\-manager\-::\-Controller\-Loader$<$ T $>$@{controller\-\_\-manager\-::\-Controller\-Loader$<$ T $>$}}
+
+
+\-Pluginlib-\/\-Based \-Controller \-Loader.  
+
+
+
+
+{\ttfamily \#include $<$controller\-\_\-loader.\-h$>$}
+
+
+
+\-Inheritance diagram for controller\-\_\-manager\-:\-:\-Controller\-Loader$<$ \-T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classcontroller__manager_1_1ControllerLoader__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controller\-Loader} (const std\-::string \&package, const std\-::string \&base\-\_\-class)
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ controller\-\_\-interface\-::\-Controller\-Base $>$ {\bf create\-Instance} (const std\-::string \&lookup\-\_\-name)
+\item 
+std\-::vector$<$ std\-::string $>$ {\bf get\-Declared\-Classes} ()
+\item 
+void {\bf reload} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf base\-\_\-class\-\_\-}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ pluginlib\-::\-Class\-Loader$<$ \-T $>$ $>$ {\bf controller\-\_\-loader\-\_\-}
+\item 
+std\-::string {\bf package\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class T$>$class controller\-\_\-manager\-::\-Controller\-Loader$<$ T $>$}
+
+\-Pluginlib-\/\-Based \-Controller \-Loader. 
+
+\-This default controller loader uses pluginlib to load and then instantiate controller libraries.
+
+
+\begin{DoxyTemplParams}{\-Template Parameters}
+{\em \-T} & \-The base class of the controller types to be loaded \\
+\hline
+\end{DoxyTemplParams}
+
+
+\-Definition at line 48 of file controller\-\_\-loader.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{controller\-\_\-manager\-::\-Controller\-Loader@{controller\-\_\-manager\-::\-Controller\-Loader}!\-Controller\-Loader@{\-Controller\-Loader}}
+\index{\-Controller\-Loader@{\-Controller\-Loader}!controller_manager::ControllerLoader@{controller\-\_\-manager\-::\-Controller\-Loader}}
+\subsubsection[{\-Controller\-Loader}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf controller\-\_\-manager\-::\-Controller\-Loader}$<$ \-T $>$\-::{\bf \-Controller\-Loader} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{package, }
+\item[{const std\-::string \&}]{base\-\_\-class}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontroller__manager_1_1ControllerLoader_afe9bad4518a77dff8aaa108c517f643f}
+
+
+\-Definition at line 51 of file controller\-\_\-loader.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{controller\-\_\-manager\-::\-Controller\-Loader@{controller\-\_\-manager\-::\-Controller\-Loader}!create\-Instance@{create\-Instance}}
+\index{create\-Instance@{create\-Instance}!controller_manager::ControllerLoader@{controller\-\_\-manager\-::\-Controller\-Loader}}
+\subsubsection[{create\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ boost\-::shared\-\_\-ptr$<$controller\-\_\-interface\-::\-Controller\-Base$>$ {\bf controller\-\_\-manager\-::\-Controller\-Loader}$<$ \-T $>$\-::{\bf create\-Instance} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{lookup\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcontroller__manager_1_1ControllerLoader_a4624522fe70a5bc8d763a6303c0d1f90}
+
+
+\-Implements {\bf controller\-\_\-manager\-::\-Controller\-Loader\-Interface} \doxyref{}{p.}{classcontroller__manager_1_1ControllerLoaderInterface_ad09f91e6dd661b62f4a239bfa61dd739}.
+
+
+
+\-Definition at line 59 of file controller\-\_\-loader.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Loader@{controller\-\_\-manager\-::\-Controller\-Loader}!get\-Declared\-Classes@{get\-Declared\-Classes}}
+\index{get\-Declared\-Classes@{get\-Declared\-Classes}!controller_manager::ControllerLoader@{controller\-\_\-manager\-::\-Controller\-Loader}}
+\subsubsection[{get\-Declared\-Classes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\-::vector$<$std\-::string$>$ {\bf controller\-\_\-manager\-::\-Controller\-Loader}$<$ \-T $>$\-::{\bf get\-Declared\-Classes} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcontroller__manager_1_1ControllerLoader_aa0d029bd7f49e79e24a774d05e584ad1}
+
+
+\-Implements {\bf controller\-\_\-manager\-::\-Controller\-Loader\-Interface} \doxyref{}{p.}{classcontroller__manager_1_1ControllerLoaderInterface_abf15bd6150b59cefbaadb8554e86e106}.
+
+
+
+\-Definition at line 64 of file controller\-\_\-loader.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Loader@{controller\-\_\-manager\-::\-Controller\-Loader}!reload@{reload}}
+\index{reload@{reload}!controller_manager::ControllerLoader@{controller\-\_\-manager\-::\-Controller\-Loader}}
+\subsubsection[{reload}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf controller\-\_\-manager\-::\-Controller\-Loader}$<$ \-T $>$\-::{\bf reload} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcontroller__manager_1_1ControllerLoader_a22fbd05d6a74624394812ff3019c71b7}
+
+
+\-Implements {\bf controller\-\_\-manager\-::\-Controller\-Loader\-Interface} \doxyref{}{p.}{classcontroller__manager_1_1ControllerLoaderInterface_a56a2d0dac8b1ec5e15716c7b3587f182}.
+
+
+
+\-Definition at line 69 of file controller\-\_\-loader.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{controller\-\_\-manager\-::\-Controller\-Loader@{controller\-\_\-manager\-::\-Controller\-Loader}!base\-\_\-class\-\_\-@{base\-\_\-class\-\_\-}}
+\index{base\-\_\-class\-\_\-@{base\-\_\-class\-\_\-}!controller_manager::ControllerLoader@{controller\-\_\-manager\-::\-Controller\-Loader}}
+\subsubsection[{base\-\_\-class\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\-::string {\bf controller\-\_\-manager\-::\-Controller\-Loader}$<$ \-T $>$\-::{\bf base\-\_\-class\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerLoader_a11fc4999e45c84d1ab8f9c2988efc1c7}
+
+
+\-Definition at line 76 of file controller\-\_\-loader.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Loader@{controller\-\_\-manager\-::\-Controller\-Loader}!controller\-\_\-loader\-\_\-@{controller\-\_\-loader\-\_\-}}
+\index{controller\-\_\-loader\-\_\-@{controller\-\_\-loader\-\_\-}!controller_manager::ControllerLoader@{controller\-\_\-manager\-::\-Controller\-Loader}}
+\subsubsection[{controller\-\_\-loader\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ boost\-::shared\-\_\-ptr$<$pluginlib\-::\-Class\-Loader$<$\-T$>$ $>$ {\bf controller\-\_\-manager\-::\-Controller\-Loader}$<$ \-T $>$\-::{\bf controller\-\_\-loader\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerLoader_a763f99995f93b6cf29638e2215761e0f}
+
+
+\-Definition at line 77 of file controller\-\_\-loader.\-h.
+
+\index{controller\-\_\-manager\-::\-Controller\-Loader@{controller\-\_\-manager\-::\-Controller\-Loader}!package\-\_\-@{package\-\_\-}}
+\index{package\-\_\-@{package\-\_\-}!controller_manager::ControllerLoader@{controller\-\_\-manager\-::\-Controller\-Loader}}
+\subsubsection[{package\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\-::string {\bf controller\-\_\-manager\-::\-Controller\-Loader}$<$ \-T $>$\-::{\bf package\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__manager_1_1ControllerLoader_aab883fabeffffe6419a82948ec59bcd6}
+
+
+\-Definition at line 75 of file controller\-\_\-loader.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf controller\-\_\-loader.\-h}\end{DoxyCompactItemize}

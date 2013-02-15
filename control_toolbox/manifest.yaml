@@ -1,0 +1,16 @@
+authors: Melonee Wise, Sachin Chitta, John Hsu
+brief: Control Toolbox
+depends:
+- tf
+- rosconsole
+- tinyxml
+- roscpp
+- angles
+description: "\n    The control toolbox contains modules that are useful across all\
+  \ controllers.\n  "
+license: BSD
+msgs: []
+package_type: package
+srvs:
+- SetPidGains
+url: http://ros.org/wiki/control_toolbox

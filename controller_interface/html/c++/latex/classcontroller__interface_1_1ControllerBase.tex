@@ -1,0 +1,324 @@
+\section{controller\-\_\-interface\-:\-:\-Controller\-Base \-Class \-Reference}
+\label{classcontroller__interface_1_1ControllerBase}\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}}
+
+
+\-Abstract \-Controller \-Interface.  
+
+
+
+
+{\ttfamily \#include $<$controller\-\_\-base.\-h$>$}
+
+
+
+\-Inheritance diagram for controller\-\_\-interface\-:\-:\-Controller\-Base\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classcontroller__interface_1_1ControllerBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bf \-C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-D}, 
+{\bf \-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D}, 
+{\bf \-R\-U\-N\-N\-I\-N\-G}
+ \}
+\begin{DoxyCompactList}\small\item\em \-The current execution state of the controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controller\-Base} ()
+\item 
+virtual std\-::string {\bf get\-Hardware\-Interface\-Type} () const =0
+\begin{DoxyCompactList}\small\item\em \-Get the name of this controller's hardware interface type. \end{DoxyCompactList}\item 
+virtual bool {\bf init\-Request} (hardware\-\_\-interface\-::\-Robot\-H\-W $\ast$hw, ros\-::\-Node\-Handle \&n, std\-::set$<$ std\-::string $>$ \&claimed\-\_\-resources)=0
+\begin{DoxyCompactList}\small\item\em \-Request that the controller be initialized. \end{DoxyCompactList}\item 
+bool {\bf is\-Running} ()
+\begin{DoxyCompactList}\small\item\em \-Check if the controller is running. \end{DoxyCompactList}\item 
+virtual void {\bf starting} (const ros\-::\-Time \&time)
+\begin{DoxyCompactList}\small\item\em \-This is called from within the realtime thread just before the first call to \doxyref{update}{p.}{classcontroller__interface_1_1ControllerBase_ac8311b50003813138d4e393f8feeb304}. \end{DoxyCompactList}\item 
+bool {\bf start\-Request} (const ros\-::\-Time \&time)
+\begin{DoxyCompactList}\small\item\em \-Calls \doxyref{starting}{p.}{classcontroller__interface_1_1ControllerBase_a3182b8c1d57aef7b7de4e9a022c1fac1} only if this controller is initialized or already running. \end{DoxyCompactList}\item 
+virtual void {\bf stopping} (const ros\-::\-Time \&time)
+\begin{DoxyCompactList}\small\item\em \-This is called from within the realtime thread just after the last update call before the controller is stopped. \end{DoxyCompactList}\item 
+bool {\bf stop\-Request} (const ros\-::\-Time \&time)
+\begin{DoxyCompactList}\small\item\em \-Calls \doxyref{stopping}{p.}{classcontroller__interface_1_1ControllerBase_a73ed67512a26a98d54e864ac60da0c7e} only if this controller is initialized or already running. \end{DoxyCompactList}\item 
+virtual void {\bf update} (const ros\-::\-Time \&time, const ros\-::\-Duration \&period)=0
+\begin{DoxyCompactList}\small\item\em \-This is called periodically by the realtime thread when the controller is running. \end{DoxyCompactList}\item 
+void {\bf update\-Request} (const ros\-::\-Time \&time, const ros\-::\-Duration \&period)
+\begin{DoxyCompactList}\small\item\em \-Calls \doxyref{update}{p.}{classcontroller__interface_1_1ControllerBase_ac8311b50003813138d4e393f8feeb304} only if this controller is running. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Controller\-Base} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \*
+controller\-\_\-interface\-::\-Controller\-Base\-:: \{ ... \}  {\bf state\-\_\-}
+\begin{DoxyCompactList}\small\item\em \-The current execution state of the controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controller\-Base} (const {\bf \-Controller\-Base} \&c)
+\item 
+{\bf \-Controller\-Base} \& {\bf operator=} (const {\bf \-Controller\-Base} \&c)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Abstract \-Controller \-Interface. 
+
+
+
+\-Definition at line 49 of file controller\-\_\-base.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{classcontroller__interface_1_1ControllerBase_aaca254f490b08fa24708a126a1035689}
+
+
+\-The current execution state of the controller. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-D@{\-C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-D}!controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}}\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!\-C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-D@{\-C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-D}}\item[{\em 
+\-C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-D\label{classcontroller__interface_1_1ControllerBase_aaca254f490b08fa24708a126a1035689af64d194854f4389f55cdd5f86755f78d}
+}]\index{\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D@{\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D}!controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}}\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D@{\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D}}\item[{\em 
+\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D\label{classcontroller__interface_1_1ControllerBase_aaca254f490b08fa24708a126a1035689ada3acea3f0d2bc4d3b18ae3d9f05430b}
+}]\index{\-R\-U\-N\-N\-I\-N\-G@{\-R\-U\-N\-N\-I\-N\-G}!controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}}\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!\-R\-U\-N\-N\-I\-N\-G@{\-R\-U\-N\-N\-I\-N\-G}}\item[{\em 
+\-R\-U\-N\-N\-I\-N\-G\label{classcontroller__interface_1_1ControllerBase_aaca254f490b08fa24708a126a1035689a7741486732aadc1ab6a16aef6e836107}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 137 of file controller\-\_\-base.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!\-Controller\-Base@{\-Controller\-Base}}
+\index{\-Controller\-Base@{\-Controller\-Base}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{\-Controller\-Base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf controller\-\_\-interface\-::\-Controller\-Base\-::\-Controller\-Base} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontroller__interface_1_1ControllerBase_acfa419666672205ba5dde3b640614cee}
+
+
+\-Definition at line 52 of file controller\-\_\-base.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!$\sim$\-Controller\-Base@{$\sim$\-Controller\-Base}}
+\index{$\sim$\-Controller\-Base@{$\sim$\-Controller\-Base}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{$\sim$\-Controller\-Base}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf controller\-\_\-interface\-::\-Controller\-Base\-::$\sim$\-Controller\-Base} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcontroller__interface_1_1ControllerBase_a02d977c757e09328222e144a1abe4fac}
+
+
+\-Definition at line 53 of file controller\-\_\-base.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!\-Controller\-Base@{\-Controller\-Base}}
+\index{\-Controller\-Base@{\-Controller\-Base}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{\-Controller\-Base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf controller\-\_\-interface\-::\-Controller\-Base\-::\-Controller\-Base} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Controller\-Base} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__interface_1_1ControllerBase_a191b7a624a65f73a1c5a165f659f2f69}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!get\-Hardware\-Interface\-Type@{get\-Hardware\-Interface\-Type}}
+\index{get\-Hardware\-Interface\-Type@{get\-Hardware\-Interface\-Type}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{get\-Hardware\-Interface\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf controller\-\_\-interface\-::\-Controller\-Base\-::get\-Hardware\-Interface\-Type} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcontroller__interface_1_1ControllerBase_aa2908562c2d435458ae257d7431ab198}
+
+
+\-Get the name of this controller's hardware interface type. 
+
+
+
+\-Implemented in {\bf controller\-\_\-interface\-::\-Controller$<$ T $>$} \doxyref{}{p.}{classcontroller__interface_1_1Controller_ac8bf6b9720c7c9d2276d5e63ba3e810d}.
+
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!init\-Request@{init\-Request}}
+\index{init\-Request@{init\-Request}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{init\-Request}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf controller\-\_\-interface\-::\-Controller\-Base\-::init\-Request} (
+\begin{DoxyParamCaption}
+\item[{hardware\-\_\-interface\-::\-Robot\-H\-W $\ast$}]{hw, }
+\item[{ros\-::\-Node\-Handle \&}]{n, }
+\item[{std\-::set$<$ std\-::string $>$ \&}]{claimed\-\_\-resources}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcontroller__interface_1_1ControllerBase_a8237443cfaa485e71f39adc45fad4089}
+
+
+\-Request that the controller be initialized. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+ & {\em hw} & \-The hardware interface to the robot.\\
+\hline
+ & {\em n} & \-A \-Node\-Handle in the namespace from which the controller should read its configuration, and where it should set up its \-R\-O\-S interfaces.\\
+\hline
+\mbox{\tt out}  & {\em claimed\-\_\-resources} & \-The resources claimed by this controller.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-True if initialization was successful and the controller is ready to be started. 
+\end{DoxyReturn}
+
+
+\-Implemented in {\bf controller\-\_\-interface\-::\-Controller$<$ T $>$} \doxyref{}{p.}{classcontroller__interface_1_1Controller_a601fbae7816bebb3da861a84c9158985}.
+
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!is\-Running@{is\-Running}}
+\index{is\-Running@{is\-Running}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{is\-Running}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-interface\-::\-Controller\-Base\-::is\-Running} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontroller__interface_1_1ControllerBase_aba543233f0c1023aeb0f158b847e21f8}
+
+
+\-Check if the controller is running. 
+
+\begin{DoxyReturn}{\-Returns}
+true if the controller is running 
+\end{DoxyReturn}
+
+
+\-Definition at line 79 of file controller\-\_\-base.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!operator=@{operator=}}
+\index{operator=@{operator=}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Controller\-Base}\& controller\-\_\-interface\-::\-Controller\-Base\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Controller\-Base} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontroller__interface_1_1ControllerBase_a4065f4078a2ea1584fb958267f2c71f8}
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!starting@{starting}}
+\index{starting@{starting}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{starting}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf controller\-\_\-interface\-::\-Controller\-Base\-::starting} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Time \&}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcontroller__interface_1_1ControllerBase_a3182b8c1d57aef7b7de4e9a022c1fac1}
+
+
+\-This is called from within the realtime thread just before the first call to \doxyref{update}{p.}{classcontroller__interface_1_1ControllerBase_ac8311b50003813138d4e393f8feeb304}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em time} & \-The current time \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 60 of file controller\-\_\-base.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!start\-Request@{start\-Request}}
+\index{start\-Request@{start\-Request}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{start\-Request}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-interface\-::\-Controller\-Base\-::start\-Request} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Time \&}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontroller__interface_1_1ControllerBase_a9401276b8ac526d20a2abe8aa7b3024c}
+
+
+\-Calls \doxyref{starting}{p.}{classcontroller__interface_1_1ControllerBase_a3182b8c1d57aef7b7de4e9a022c1fac1} only if this controller is initialized or already running. 
+
+
+
+\-Definition at line 108 of file controller\-\_\-base.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!stopping@{stopping}}
+\index{stopping@{stopping}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{stopping}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf controller\-\_\-interface\-::\-Controller\-Base\-::stopping} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Time \&}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcontroller__interface_1_1ControllerBase_a73ed67512a26a98d54e864ac60da0c7e}
+
+
+\-This is called from within the realtime thread just after the last update call before the controller is stopped. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em time} & \-The current time \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 74 of file controller\-\_\-base.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!stop\-Request@{stop\-Request}}
+\index{stop\-Request@{stop\-Request}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{stop\-Request}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf controller\-\_\-interface\-::\-Controller\-Base\-::stop\-Request} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Time \&}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontroller__interface_1_1ControllerBase_adfb9dd4cec39aaa7684c988b0510b255}
+
+
+\-Calls \doxyref{stopping}{p.}{classcontroller__interface_1_1ControllerBase_a73ed67512a26a98d54e864ac60da0c7e} only if this controller is initialized or already running. 
+
+
+
+\-Definition at line 121 of file controller\-\_\-base.\-h.
+
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!update@{update}}
+\index{update@{update}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf controller\-\_\-interface\-::\-Controller\-Base\-::update} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Time \&}]{time, }
+\item[{const ros\-::\-Duration \&}]{period}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcontroller__interface_1_1ControllerBase_ac8311b50003813138d4e393f8feeb304}
+
+
+\-This is called periodically by the realtime thread when the controller is running. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em time} & \-The current time \\
+\hline
+{\em period} & \-The time passed since the last call to \doxyref{update}{p.}{classcontroller__interface_1_1ControllerBase_ac8311b50003813138d4e393f8feeb304} \\
+\hline
+\end{DoxyParams}
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!update\-Request@{update\-Request}}
+\index{update\-Request@{update\-Request}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{update\-Request}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf controller\-\_\-interface\-::\-Controller\-Base\-::update\-Request} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Time \&}]{time, }
+\item[{const ros\-::\-Duration \&}]{period}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontroller__interface_1_1ControllerBase_a20f872ff2fb757bdd372cb456ff35052}
+
+
+\-Calls \doxyref{update}{p.}{classcontroller__interface_1_1ControllerBase_ac8311b50003813138d4e393f8feeb304} only if this controller is running. 
+
+
+
+\-Definition at line 101 of file controller\-\_\-base.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{controller\-\_\-interface\-::\-Controller\-Base@{controller\-\_\-interface\-::\-Controller\-Base}!state\-\_\-@{state\-\_\-}}
+\index{state\-\_\-@{state\-\_\-}!controller_interface::ControllerBase@{controller\-\_\-interface\-::\-Controller\-Base}}
+\subsubsection[{state\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}enum \{ ... \}   {\bf controller\-\_\-interface\-::\-Controller\-Base\-::state\-\_\-}}\label{classcontroller__interface_1_1ControllerBase_a09e9626a8986edb8a5d3bc6aa9d14d01}
+
+
+\-The current execution state of the controller. 
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf controller\-\_\-base.\-h}\end{DoxyCompactItemize}

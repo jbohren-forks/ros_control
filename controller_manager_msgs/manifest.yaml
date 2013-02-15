@@ -1,0 +1,19 @@
+authors: Wim Meeussen
+brief: ''
+depends:
+- std_msgs
+description: "\n    Messages and services for the controller manager.\n  "
+license: BSD
+msgs:
+- ControllerState
+- ControllersStatistics
+- ControllerStatistics
+package_type: package
+srvs:
+- ListControllers
+- UnloadController
+- LoadController
+- SwitchController
+- ReloadControllerLibraries
+- ListControllerTypes
+url: https://bitbucket.org/hidof/controller-manager/wiki/

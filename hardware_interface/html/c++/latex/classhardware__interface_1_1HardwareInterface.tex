@@ -1,0 +1,127 @@
+\section{hardware\-\_\-interface\-:\-:\-Hardware\-Interface \-Class \-Reference}
+\label{classhardware__interface_1_1HardwareInterface}\index{hardware\-\_\-interface\-::\-Hardware\-Interface@{hardware\-\_\-interface\-::\-Hardware\-Interface}}
+
+
+\-Abstract \-Hardware \-Interface.  
+
+
+
+
+{\ttfamily \#include $<$hardware\-\_\-interface.\-h$>$}
+
+
+
+\-Inheritance diagram for hardware\-\_\-interface\-:\-:\-Hardware\-Interface\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhardware__interface_1_1HardwareInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\-Hardware\-Interface} ()
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf \-Resource management}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf claim} (std\-::string resource)
+\begin{DoxyCompactList}\small\item\em \-Claim a resource by name. \end{DoxyCompactList}\item 
+void {\bf clear\-Claims} ()
+\begin{DoxyCompactList}\small\item\em \-Clear the resources this interface is claiming. \end{DoxyCompactList}\item 
+std\-::set$<$ std\-::string $>$ {\bf get\-Claims} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the list of resources this interface is currently claiming. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::set$<$ std\-::string $>$ {\bf claims\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Abstract \-Hardware \-Interface. 
+
+
+
+\-Definition at line 47 of file hardware\-\_\-interface.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{hardware\-\_\-interface\-::\-Hardware\-Interface@{hardware\-\_\-interface\-::\-Hardware\-Interface}!$\sim$\-Hardware\-Interface@{$\sim$\-Hardware\-Interface}}
+\index{$\sim$\-Hardware\-Interface@{$\sim$\-Hardware\-Interface}!hardware_interface::HardwareInterface@{hardware\-\_\-interface\-::\-Hardware\-Interface}}
+\subsubsection[{$\sim$\-Hardware\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf hardware\-\_\-interface\-::\-Hardware\-Interface\-::$\sim$\-Hardware\-Interface} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classhardware__interface_1_1HardwareInterface_a66029297e30ce8218aa86db056e73872}
+
+
+\-Definition at line 50 of file hardware\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{hardware\-\_\-interface\-::\-Hardware\-Interface@{hardware\-\_\-interface\-::\-Hardware\-Interface}!claim@{claim}}
+\index{claim@{claim}!hardware_interface::HardwareInterface@{hardware\-\_\-interface\-::\-Hardware\-Interface}}
+\subsubsection[{claim}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf hardware\-\_\-interface\-::\-Hardware\-Interface\-::claim} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{resource}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classhardware__interface_1_1HardwareInterface_a1cbbbf08565bd3b6b602c8150dbf5222}
+
+
+\-Claim a resource by name. 
+
+
+
+\-Definition at line 56 of file hardware\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Hardware\-Interface@{hardware\-\_\-interface\-::\-Hardware\-Interface}!clear\-Claims@{clear\-Claims}}
+\index{clear\-Claims@{clear\-Claims}!hardware_interface::HardwareInterface@{hardware\-\_\-interface\-::\-Hardware\-Interface}}
+\subsubsection[{clear\-Claims}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf hardware\-\_\-interface\-::\-Hardware\-Interface\-::clear\-Claims} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1HardwareInterface_ae3dc4c94adb4b1b767d291ce9f97a2ab}
+
+
+\-Clear the resources this interface is claiming. 
+
+
+
+\-Definition at line 59 of file hardware\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Hardware\-Interface@{hardware\-\_\-interface\-::\-Hardware\-Interface}!get\-Claims@{get\-Claims}}
+\index{get\-Claims@{get\-Claims}!hardware_interface::HardwareInterface@{hardware\-\_\-interface\-::\-Hardware\-Interface}}
+\subsubsection[{get\-Claims}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<$std\-::string$>$ {\bf hardware\-\_\-interface\-::\-Hardware\-Interface\-::get\-Claims} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1HardwareInterface_aaa6cbe2de90c06134a152059175f5a2e}
+
+
+\-Get the list of resources this interface is currently claiming. 
+
+
+
+\-Definition at line 62 of file hardware\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{hardware\-\_\-interface\-::\-Hardware\-Interface@{hardware\-\_\-interface\-::\-Hardware\-Interface}!claims\-\_\-@{claims\-\_\-}}
+\index{claims\-\_\-@{claims\-\_\-}!hardware_interface::HardwareInterface@{hardware\-\_\-interface\-::\-Hardware\-Interface}}
+\subsubsection[{claims\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<$std\-::string$>$ {\bf hardware\-\_\-interface\-::\-Hardware\-Interface\-::claims\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhardware__interface_1_1HardwareInterface_a739621a61c83be71e29200f55fede47d}
+
+
+\-Definition at line 67 of file hardware\-\_\-interface.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf hardware\-\_\-interface.\-h}\end{DoxyCompactItemize}

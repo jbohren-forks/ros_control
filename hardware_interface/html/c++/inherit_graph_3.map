@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classhardware__interface_1_1JointStateHandle.html" title="A handle used to read the state of a single joint." alt="" coords="5,5,245,35"/>
+<area shape="rect" id="node3" href="$classhardware__interface_1_1JointHandle.html" title="A handle used to read and command a single joint." alt="" coords="295,5,503,35"/>
+</map>

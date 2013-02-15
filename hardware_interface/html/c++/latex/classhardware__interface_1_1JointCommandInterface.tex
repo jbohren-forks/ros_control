@@ -1,0 +1,141 @@
+\section{hardware\-\_\-interface\-:\-:\-Joint\-Command\-Interface \-Class \-Reference}
+\label{classhardware__interface_1_1JointCommandInterface}\index{hardware\-\_\-interface\-::\-Joint\-Command\-Interface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}}
+
+
+\-Hardware interface to support commanding an array of joints.  
+
+
+
+
+{\ttfamily \#include $<$joint\-\_\-command\-\_\-interface.\-h$>$}
+
+
+
+\-Inheritance diagram for hardware\-\_\-interface\-:\-:\-Joint\-Command\-Interface\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhardware__interface_1_1JointCommandInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Joint\-Handle} {\bf get\-Joint\-Handle} (const std\-::string \&name)
+\begin{DoxyCompactList}\small\item\em \-Get a \doxyref{\-Joint\-Handle}{p.}{classhardware__interface_1_1JointHandle} for accessing a joint's state and setting its output command. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ {\bf get\-Joint\-Names} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the vector of joint names registered to this interface. \end{DoxyCompactList}\item 
+void {\bf register\-Joint} (const {\bf \-Joint\-State\-Handle} \&js, double $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em \-Register a new joint with this interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::map$<$ std\-::string, \*
+{\bf \-Joint\-Handle} $>$ {\bf \-Handle\-Map}
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Handle\-Map} {\bf handle\-\_\-map\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Hardware interface to support commanding an array of joints. 
+
+\-This \doxyref{\-Hardware\-Interface}{p.}{classhardware__interface_1_1HardwareInterface} supports commanding the output of an array of named joints. \-Note that these commands can have any semantic meaning as long as they each can be represented by a single double, they are not necessarily effort commands. \-To specify a meaning to this command, see the derived classes like \doxyref{\-Effort\-Joint\-Interface}{p.}{classhardware__interface_1_1EffortJointInterface} etc. 
+
+\-Definition at line 62 of file joint\-\_\-command\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Typedef \-Documentation}
+\index{hardware\-\_\-interface\-::\-Joint\-Command\-Interface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}!\-Handle\-Map@{\-Handle\-Map}}
+\index{\-Handle\-Map@{\-Handle\-Map}!hardware_interface::JointCommandInterface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}}
+\subsubsection[{\-Handle\-Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::map$<$std\-::string, {\bf \-Joint\-Handle}$>$ {\bf hardware\-\_\-interface\-::\-Joint\-Command\-Interface\-::\-Handle\-Map}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classhardware__interface_1_1JointCommandInterface_aedf0d8a77b297ed5b9cb0bf0c2b3e986}
+
+
+\-Definition at line 115 of file joint\-\_\-command\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{hardware\-\_\-interface\-::\-Joint\-Command\-Interface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}!get\-Joint\-Handle@{get\-Joint\-Handle}}
+\index{get\-Joint\-Handle@{get\-Joint\-Handle}!hardware_interface::JointCommandInterface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}}
+\subsubsection[{get\-Joint\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Joint\-Handle} {\bf hardware\-\_\-interface\-::\-Joint\-Command\-Interface\-::get\-Joint\-Handle} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointCommandInterface_a07cb2be92559938fdf166f2032dde547}
+
+
+\-Get a \doxyref{\-Joint\-Handle}{p.}{classhardware__interface_1_1JointHandle} for accessing a joint's state and setting its output command. 
+
+\-When a \doxyref{\-Joint\-Handle}{p.}{classhardware__interface_1_1JointHandle} is acquired, this interface will claim the joint as a resource.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-The name of the joint\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-A \doxyref{\-Joint\-Handle}{p.}{classhardware__interface_1_1JointHandle} corresponding to the joint identified by {\ttfamily name} 
+\end{DoxyReturn}
+
+
+\-Definition at line 103 of file joint\-\_\-command\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-Command\-Interface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}!get\-Joint\-Names@{get\-Joint\-Names}}
+\index{get\-Joint\-Names@{get\-Joint\-Names}!hardware_interface::JointCommandInterface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}}
+\subsubsection[{get\-Joint\-Names}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ {\bf hardware\-\_\-interface\-::\-Joint\-Command\-Interface\-::get\-Joint\-Names} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointCommandInterface_a61861b11cb5d39d09c0c073c24112396}
+
+
+\-Get the vector of joint names registered to this interface. 
+
+
+
+\-Definition at line 66 of file joint\-\_\-command\-\_\-interface.\-h.
+
+\index{hardware\-\_\-interface\-::\-Joint\-Command\-Interface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}!register\-Joint@{register\-Joint}}
+\index{register\-Joint@{register\-Joint}!hardware_interface::JointCommandInterface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}}
+\subsubsection[{register\-Joint}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf hardware\-\_\-interface\-::\-Joint\-Command\-Interface\-::register\-Joint} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Joint\-State\-Handle} \&}]{js, }
+\item[{double $\ast$}]{cmd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1JointCommandInterface_a423ae65f94c2d21ac647b9a84f4c5fa4}
+
+
+\-Register a new joint with this interface. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-The name of the new joint \\
+\hline
+{\em cmd} & \-A pointer to the storage for this joint's output command \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 82 of file joint\-\_\-command\-\_\-interface.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{hardware\-\_\-interface\-::\-Joint\-Command\-Interface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}!handle\-\_\-map\-\_\-@{handle\-\_\-map\-\_\-}}
+\index{handle\-\_\-map\-\_\-@{handle\-\_\-map\-\_\-}!hardware_interface::JointCommandInterface@{hardware\-\_\-interface\-::\-Joint\-Command\-Interface}}
+\subsubsection[{handle\-\_\-map\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Handle\-Map} {\bf hardware\-\_\-interface\-::\-Joint\-Command\-Interface\-::handle\-\_\-map\-\_\-}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classhardware__interface_1_1JointCommandInterface_a81b8c65ce8be154d248aee27600aae48}
+
+
+\-Definition at line 116 of file joint\-\_\-command\-\_\-interface.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf joint\-\_\-command\-\_\-interface.\-h}\end{DoxyCompactItemize}

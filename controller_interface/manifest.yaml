@@ -1,0 +1,12 @@
+authors: Wim Meeussen
+brief: ''
+depends:
+- hardware_interface
+- roscpp
+- pluginlib
+description: "\n    Interface base class for controllers\n  "
+license: BSD
+msgs: []
+package_type: package
+srvs: []
+url: https://bitbucket.org/hidof/controller-manager/wiki/

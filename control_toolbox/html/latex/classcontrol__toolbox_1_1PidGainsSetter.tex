@@ -1,0 +1,179 @@
+\section{control\-\_\-toolbox\-:\-:\-Pid\-Gains\-Setter \-Class \-Reference}
+\label{classcontrol__toolbox_1_1PidGainsSetter}\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+
+
+\-Sets up services for quickly changing the gains for a \doxyref{control\-\_\-toolbox\-::\-Pid}{p.}{classcontrol__toolbox_1_1Pid} \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} object.  
+
+
+
+
+{\ttfamily \#include $<$pid\-\_\-gains\-\_\-setter.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Pid\-Gains\-Setter} \& {\bf add} ({\bf \-Pid} $\ast$pid)
+\begin{DoxyCompactList}\small\item\em \-Adds a \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} object. \end{DoxyCompactList}\item 
+void {\bf advertise} (const ros\-::\-Node\-Handle \&n)
+\begin{DoxyCompactList}\small\item\em \-Advertises the \char`\"{}set\-\_\-gains\char`\"{} service, initializing the \doxyref{\-Pid\-Gains\-Setter}{p.}{classcontrol__toolbox_1_1PidGainsSetter}. \end{DoxyCompactList}\item 
+void {\bf advertise} (const std\-::string \&ns)
+\begin{DoxyCompactList}\small\item\em \-Advertises the \char`\"{}set\-\_\-gains\char`\"{} service, initializing the \doxyref{\-Pid\-Gains\-Setter}{p.}{classcontrol__toolbox_1_1PidGainsSetter}. \end{DoxyCompactList}\item 
+{\bf \-Pid\-Gains\-Setter} ()
+\item 
+bool {\bf set\-Gains} ({\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-::\-Request} \&req, {\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-::\-Response} \&resp)
+\item 
+{\bf $\sim$\-Pid\-Gains\-Setter} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle {\bf node\-\_\-}
+\item 
+std\-::vector$<$ {\bf \-Pid} $\ast$ $>$ {\bf pids\-\_\-}
+\item 
+ros\-::\-Service\-Server {\bf serve\-\_\-set\-\_\-gains\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Sets up services for quickly changing the gains for a \doxyref{control\-\_\-toolbox\-::\-Pid}{p.}{classcontrol__toolbox_1_1Pid} \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} object. 
+
+\-The \doxyref{\-Pid\-Gains\-Setter}{p.}{classcontrol__toolbox_1_1PidGainsSetter} class provides services for changing the gains of \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} objects over \-R\-O\-S. \-It advertise the \char`\"{}set\-\_\-gains\char`\"{} service in the \-Node\-Handle's namespace, with a type of control\-\_\-toolbox/\-Set\-Pid\-Gains.
+
+\-To use the object, add pids to the gains setter and then call \doxyref{advertise()}{p.}{classcontrol__toolbox_1_1PidGainsSetter_abf3f47ec6d3afca0ff691a7ba0066e7d}. \-The \doxyref{\-Pid\-Gains\-Setter}{p.}{classcontrol__toolbox_1_1PidGainsSetter} will then update the gains of all the \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} objects when you call the set\-\_\-gains service. (\-If you wish to have \-Pids with different gains, then you should use multiple \doxyref{\-Pid\-Gains\-Setter}{p.}{classcontrol__toolbox_1_1PidGainsSetter} objects).
+
+\begin{DoxyVerb}
+ ros::NodeHandle node;
+ control_toolbox::Pid a, b, c;
+ control_toolbox::PidGainsSetter pid_gains_setter;
+
+ pid_gains_setter.add(&a);
+ pid_gains_setter.add(&b).add(&c);
+ pid_gains_setter.advertise(node);
+ \end{DoxyVerb}
+
+
+\-R\-O\-S \-A\-P\-I
+
+
+\begin{DoxyItemize}
+\item {\bfseries set\-\_\-gains} [\doxyref{control\-\_\-toolbox\-::\-Set\-Pid\-Gains}{p.}{structcontrol__toolbox_1_1SetPidGains}] -\/ \-Updates the gains of all the \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} objects that have been added. 
+\end{DoxyItemize}
+
+\-Definition at line 74 of file pid\-\_\-gains\-\_\-setter.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}!\-Pid\-Gains\-Setter@{\-Pid\-Gains\-Setter}}
+\index{\-Pid\-Gains\-Setter@{\-Pid\-Gains\-Setter}!control_toolbox::PidGainsSetter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+\subsubsection[{\-Pid\-Gains\-Setter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Pid\-Gains\-Setter\-::\-Pid\-Gains\-Setter} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontrol__toolbox_1_1PidGainsSetter_a68bcafe5059d389d64b510199659cb8d}
+
+
+\-Definition at line 77 of file pid\-\_\-gains\-\_\-setter.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}!$\sim$\-Pid\-Gains\-Setter@{$\sim$\-Pid\-Gains\-Setter}}
+\index{$\sim$\-Pid\-Gains\-Setter@{$\sim$\-Pid\-Gains\-Setter}!control_toolbox::PidGainsSetter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+\subsubsection[{$\sim$\-Pid\-Gains\-Setter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Pid\-Gains\-Setter\-::$\sim$\-Pid\-Gains\-Setter} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1PidGainsSetter_ab55dba3ac6ef74fcd7a6d58b1bb27fab}
+
+
+\-Definition at line 34 of file pid\-\_\-gains\-\_\-setter.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}!add@{add}}
+\index{add@{add}!control_toolbox::PidGainsSetter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pid\-Gains\-Setter} \& {\bf control\-\_\-toolbox\-::\-Pid\-Gains\-Setter\-::add} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Pid} $\ast$}]{pid}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1PidGainsSetter_ae523af2fe173cd93abfca63cfb5c6ba8}
+
+
+\-Adds a \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} object. 
+
+\-Adds a \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} object to be modified when new gains are set over the service. 
+
+\-Definition at line 39 of file pid\-\_\-gains\-\_\-setter.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}!advertise@{advertise}}
+\index{advertise@{advertise}!control_toolbox::PidGainsSetter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+\subsubsection[{advertise}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Pid\-Gains\-Setter\-::advertise} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Node\-Handle \&}]{n}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1PidGainsSetter_abf3f47ec6d3afca0ff691a7ba0066e7d}
+
+
+\-Advertises the \char`\"{}set\-\_\-gains\char`\"{} service, initializing the \doxyref{\-Pid\-Gains\-Setter}{p.}{classcontrol__toolbox_1_1PidGainsSetter}. 
+
+
+
+\-Definition at line 46 of file pid\-\_\-gains\-\_\-setter.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}!advertise@{advertise}}
+\index{advertise@{advertise}!control_toolbox::PidGainsSetter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+\subsubsection[{advertise}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Pid\-Gains\-Setter\-::advertise} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{ns}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontrol__toolbox_1_1PidGainsSetter_a277880813ec52932a3e7b1da63296809}
+
+
+\-Advertises the \char`\"{}set\-\_\-gains\char`\"{} service, initializing the \doxyref{\-Pid\-Gains\-Setter}{p.}{classcontrol__toolbox_1_1PidGainsSetter}. 
+
+
+
+\-Definition at line 95 of file pid\-\_\-gains\-\_\-setter.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}!set\-Gains@{set\-Gains}}
+\index{set\-Gains@{set\-Gains}!control_toolbox::PidGainsSetter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+\subsubsection[{set\-Gains}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf control\-\_\-toolbox\-::\-Pid\-Gains\-Setter\-::set\-Gains} (
+\begin{DoxyParamCaption}
+\item[{{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-::\-Request} \&}]{req, }
+\item[{{\bf control\-\_\-toolbox\-::\-Set\-Pid\-Gains\-::\-Response} \&}]{resp}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1PidGainsSetter_a990c6bad14285caa82b8d6683c2cd2d3}
+
+
+\-Definition at line 52 of file pid\-\_\-gains\-\_\-setter.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}!node\-\_\-@{node\-\_\-}}
+\index{node\-\_\-@{node\-\_\-}!control_toolbox::PidGainsSetter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+\subsubsection[{node\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle {\bf control\-\_\-toolbox\-::\-Pid\-Gains\-Setter\-::node\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1PidGainsSetter_af97f35ea0a07286032e35b2db70248e5}
+
+
+\-Definition at line 101 of file pid\-\_\-gains\-\_\-setter.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}!pids\-\_\-@{pids\-\_\-}}
+\index{pids\-\_\-@{pids\-\_\-}!control_toolbox::PidGainsSetter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+\subsubsection[{pids\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-Pid}$\ast$$>$ {\bf control\-\_\-toolbox\-::\-Pid\-Gains\-Setter\-::pids\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1PidGainsSetter_a7ae74a62a2c35b69320e7db0afc1527c}
+
+
+\-Definition at line 103 of file pid\-\_\-gains\-\_\-setter.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}!serve\-\_\-set\-\_\-gains\-\_\-@{serve\-\_\-set\-\_\-gains\-\_\-}}
+\index{serve\-\_\-set\-\_\-gains\-\_\-@{serve\-\_\-set\-\_\-gains\-\_\-}!control_toolbox::PidGainsSetter@{control\-\_\-toolbox\-::\-Pid\-Gains\-Setter}}
+\subsubsection[{serve\-\_\-set\-\_\-gains\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server {\bf control\-\_\-toolbox\-::\-Pid\-Gains\-Setter\-::serve\-\_\-set\-\_\-gains\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1PidGainsSetter_a36f574be1d9109e3a63d9ecc5a0a26d4}
+
+
+\-Definition at line 102 of file pid\-\_\-gains\-\_\-setter.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf pid\-\_\-gains\-\_\-setter.\-h}\item 
+{\bf pid\-\_\-gains\-\_\-setter.\-cpp}\end{DoxyCompactItemize}

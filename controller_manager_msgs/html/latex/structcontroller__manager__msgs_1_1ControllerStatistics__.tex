@@ -1,0 +1,284 @@
+\section{controller\-\_\-manager\-\_\-msgs\-:\-:\-Controller\-Statistics\-\_\-$<$ \-Container\-Allocator $>$ \-Struct \-Template \-Reference}
+\label{structcontroller__manager__msgs_1_1ControllerStatistics__}\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-$<$ Container\-Allocator $>$@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-$<$ Container\-Allocator $>$}}
+
+
+{\ttfamily \#include $<$\-Controller\-Statistics.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef ros\-::\-Duration {\bf \-\_\-max\-\_\-time\-\_\-type}
+\item 
+typedef ros\-::\-Duration {\bf \-\_\-mean\-\_\-time\-\_\-type}
+\item 
+typedef std\-::basic\-\_\-string\*
+$<$ char, std\-::char\-\_\-traits$<$ char $>$\*
+, typename \*
+\-Container\-Allocator\-::template \*
+rebind$<$ char $>$\-::other $>$ {\bf \-\_\-name\-\_\-type}
+\item 
+typedef int32\-\_\-t {\bf \-\_\-num\-\_\-control\-\_\-loop\-\_\-overruns\-\_\-type}
+\item 
+typedef uint8\-\_\-t {\bf \-\_\-running\-\_\-type}
+\item 
+typedef ros\-::\-Time {\bf \-\_\-time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun\-\_\-type}
+\item 
+typedef ros\-::\-Time {\bf \-\_\-timestamp\-\_\-type}
+\item 
+typedef std\-::basic\-\_\-string\*
+$<$ char, std\-::char\-\_\-traits$<$ char $>$\*
+, typename \*
+\-Container\-Allocator\-::template \*
+rebind$<$ char $>$\-::other $>$ {\bf \-\_\-type\-\_\-type}
+\item 
+typedef ros\-::\-Duration {\bf \-\_\-variance\-\_\-time\-\_\-type}
+\item 
+typedef boost\-::shared\-\_\-ptr\*
+$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$ const  $>$ {\bf \-Const\-Ptr}
+\item 
+typedef boost\-::shared\-\_\-ptr\*
+$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$ $>$ {\bf \-Ptr}
+\item 
+typedef {\bf \-Controller\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$ {\bf \-Type}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controller\-Statistics\-\_\-} ()
+\item 
+{\bf \-Controller\-Statistics\-\_\-} (const \-Container\-Allocator \&\-\_\-alloc)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::shared\-\_\-ptr$<$ std\-::map\*
+$<$ std\-::string, std\-::string $>$ $>$ {\bf \-\_\-\-\_\-connection\-\_\-header}
+\item 
+ros\-::\-Duration {\bf max\-\_\-time}
+\item 
+ros\-::\-Duration {\bf mean\-\_\-time}
+\item 
+std\-::basic\-\_\-string$<$ char, \*
+std\-::char\-\_\-traits$<$ char $>$\*
+, typename \*
+\-Container\-Allocator\-::template \*
+rebind$<$ char $>$\-::other $>$ {\bf name}
+\item 
+int32\-\_\-t {\bf num\-\_\-control\-\_\-loop\-\_\-overruns}
+\item 
+uint8\-\_\-t {\bf running}
+\item 
+ros\-::\-Time {\bf time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun}
+\item 
+ros\-::\-Time {\bf timestamp}
+\item 
+std\-::basic\-\_\-string$<$ char, \*
+std\-::char\-\_\-traits$<$ char $>$\*
+, typename \*
+\-Container\-Allocator\-::template \*
+rebind$<$ char $>$\-::other $>$ {\bf type}
+\item 
+ros\-::\-Duration {\bf variance\-\_\-time}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class Container\-Allocator$>$struct controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-$<$ Container\-Allocator $>$}
+
+
+
+\-Definition at line 21 of file \-Controller\-Statistics.\-h.
+
+
+
+\subsection{\-Member \-Typedef \-Documentation}
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-max\-\_\-time\-\_\-type@{\-\_\-max\-\_\-time\-\_\-type}}
+\index{\-\_\-max\-\_\-time\-\_\-type@{\-\_\-max\-\_\-time\-\_\-type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-max\-\_\-time\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef ros\-::\-Duration {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-max\-\_\-time\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___af8286984cfb96cad4f17fbc3659cf68f}
+
+
+\-Definition at line 62 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-mean\-\_\-time\-\_\-type@{\-\_\-mean\-\_\-time\-\_\-type}}
+\index{\-\_\-mean\-\_\-time\-\_\-type@{\-\_\-mean\-\_\-time\-\_\-type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-mean\-\_\-time\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef ros\-::\-Duration {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-mean\-\_\-time\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a227cd6ef49cd217b5846678534fd94e0}
+
+
+\-Definition at line 65 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-name\-\_\-type@{\-\_\-name\-\_\-type}}
+\index{\-\_\-name\-\_\-type@{\-\_\-name\-\_\-type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-name\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef std\-::basic\-\_\-string$<$char, std\-::char\-\_\-traits$<$char$>$, typename \-Container\-Allocator\-::template rebind$<$char$>$\-::other $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-name\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a7f3e00ba63c9a6ae6af54b2bb2acda88}
+
+
+\-Definition at line 50 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-num\-\_\-control\-\_\-loop\-\_\-overruns\-\_\-type@{\-\_\-num\-\_\-control\-\_\-loop\-\_\-overruns\-\_\-type}}
+\index{\-\_\-num\-\_\-control\-\_\-loop\-\_\-overruns\-\_\-type@{\-\_\-num\-\_\-control\-\_\-loop\-\_\-overruns\-\_\-type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-num\-\_\-control\-\_\-loop\-\_\-overruns\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef int32\-\_\-t {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-num\-\_\-control\-\_\-loop\-\_\-overruns\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a11e56e515bdb981022e80dab48aad099}
+
+
+\-Definition at line 71 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-running\-\_\-type@{\-\_\-running\-\_\-type}}
+\index{\-\_\-running\-\_\-type@{\-\_\-running\-\_\-type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-running\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef uint8\-\_\-t {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-running\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___aa3740d2f815229165f3be0a634024250}
+
+
+\-Definition at line 59 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun\-\_\-type@{\-\_\-time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun\-\_\-type}}
+\index{\-\_\-time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun\-\_\-type@{\-\_\-time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun\-\_\-type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef ros\-::\-Time {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a9b3a2e35a9895a401ca63557c39ac589}
+
+
+\-Definition at line 74 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-timestamp\-\_\-type@{\-\_\-timestamp\-\_\-type}}
+\index{\-\_\-timestamp\-\_\-type@{\-\_\-timestamp\-\_\-type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-timestamp\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef ros\-::\-Time {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-timestamp\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a3881f98e2b6b68dcd5b24e260d7b2ddc}
+
+
+\-Definition at line 56 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-type\-\_\-type@{\-\_\-type\-\_\-type}}
+\index{\-\_\-type\-\_\-type@{\-\_\-type\-\_\-type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-type\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef std\-::basic\-\_\-string$<$char, std\-::char\-\_\-traits$<$char$>$, typename \-Container\-Allocator\-::template rebind$<$char$>$\-::other $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-type\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a2dca16801bc900ba874c28b833f9e9dc}
+
+
+\-Definition at line 53 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-variance\-\_\-time\-\_\-type@{\-\_\-variance\-\_\-time\-\_\-type}}
+\index{\-\_\-variance\-\_\-time\-\_\-type@{\-\_\-variance\-\_\-time\-\_\-type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-variance\-\_\-time\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef ros\-::\-Duration {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-variance\-\_\-time\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___afcfd2ce1beb04b87df6aca7ae82aa2a4}
+
+
+\-Definition at line 68 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-Const\-Ptr@{\-Const\-Ptr}}
+\index{\-Const\-Ptr@{\-Const\-Ptr}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef boost\-::shared\-\_\-ptr$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ const$>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Const\-Ptr}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a34f02363d0d1d5431aa04e8708d525f6}
+
+
+\-Definition at line 79 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-Ptr@{\-Ptr}}
+\index{\-Ptr@{\-Ptr}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef boost\-::shared\-\_\-ptr$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Ptr}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___ab0091f60c75e3cdf574ac39e6ab27ce6}
+
+
+\-Definition at line 78 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-Type@{\-Type}}
+\index{\-Type@{\-Type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef {\bf \-Controller\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a30d188f37f93ed6e64fe70ef1448ff63}
+
+
+\-Definition at line 22 of file \-Controller\-Statistics.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-Controller\-Statistics\-\_\-@{\-Controller\-Statistics\-\_\-}}
+\index{\-Controller\-Statistics\-\_\-@{\-Controller\-Statistics\-\_\-}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-Controller\-Statistics\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Controller\-Statistics\-\_\-} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a632120d3049d8457e1c98c355b23d09e}
+
+
+\-Definition at line 24 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-Controller\-Statistics\-\_\-@{\-Controller\-Statistics\-\_\-}}
+\index{\-Controller\-Statistics\-\_\-@{\-Controller\-Statistics\-\_\-}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-Controller\-Statistics\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Controller\-Statistics\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{const \-Container\-Allocator \&}]{\-\_\-alloc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a08af82940bef105c12855f95b5b0b43a}
+
+
+\-Definition at line 37 of file \-Controller\-Statistics.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!\-\_\-\-\_\-connection\-\_\-header@{\-\_\-\-\_\-connection\-\_\-header}}
+\index{\-\_\-\-\_\-connection\-\_\-header@{\-\_\-\-\_\-connection\-\_\-header}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-\-\_\-connection\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ boost\-::shared\-\_\-ptr$<$std\-::map$<$std\-::string, std\-::string$>$ $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-\-\_\-connection\-\_\-header}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a82551eb7c7cccbf85493daa85b0fc338}
+
+
+\-Definition at line 80 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!max\-\_\-time@{max\-\_\-time}}
+\index{max\-\_\-time@{max\-\_\-time}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{max\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ ros\-::\-Duration {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf max\-\_\-time}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a892ab5b6c8a70dca71726e7f5ee45f9e}
+
+
+\-Definition at line 63 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!mean\-\_\-time@{mean\-\_\-time}}
+\index{mean\-\_\-time@{mean\-\_\-time}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{mean\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ ros\-::\-Duration {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf mean\-\_\-time}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a4161ec53e068bc7679b0bbb04d7fe3ee}
+
+
+\-Definition at line 66 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!name@{name}}
+\index{name@{name}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ std\-::basic\-\_\-string$<$char, std\-::char\-\_\-traits$<$char$>$, typename \-Container\-Allocator\-::template rebind$<$char$>$\-::other $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf name}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a063b30e746672dcc2e60fabbfa65afa6}
+
+
+\-Definition at line 51 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!num\-\_\-control\-\_\-loop\-\_\-overruns@{num\-\_\-control\-\_\-loop\-\_\-overruns}}
+\index{num\-\_\-control\-\_\-loop\-\_\-overruns@{num\-\_\-control\-\_\-loop\-\_\-overruns}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{num\-\_\-control\-\_\-loop\-\_\-overruns}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ int32\-\_\-t {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf num\-\_\-control\-\_\-loop\-\_\-overruns}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___ae9ffede55480bf0a30dafc361793bd47}
+
+
+\-Definition at line 72 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!running@{running}}
+\index{running@{running}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{running}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ uint8\-\_\-t {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf running}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a8b2a8baa5afff5da9f83396afe491774}
+
+
+\-Definition at line 60 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun@{time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun}}
+\index{time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun@{time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ ros\-::\-Time {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf time\-\_\-last\-\_\-control\-\_\-loop\-\_\-overrun}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___a5aaed98b21fe570eaad9bf79eb706333}
+
+
+\-Definition at line 75 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{timestamp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ ros\-::\-Time {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf timestamp}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___ae07c0e12ffdd0291a568569cc1ab8374}
+
+
+\-Definition at line 57 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!type@{type}}
+\index{type@{type}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ std\-::basic\-\_\-string$<$char, std\-::char\-\_\-traits$<$char$>$, typename \-Container\-Allocator\-::template rebind$<$char$>$\-::other $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf type}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___ab941e5fe250d135f770e065a6ca9c27b}
+
+
+\-Definition at line 54 of file \-Controller\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}!variance\-\_\-time@{variance\-\_\-time}}
+\index{variance\-\_\-time@{variance\-\_\-time}!controller_manager_msgs::ControllerStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}}
+\subsubsection[{variance\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ ros\-::\-Duration {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf variance\-\_\-time}}\label{structcontroller__manager__msgs_1_1ControllerStatistics___ab6721e8ccaa0a2102a0089aa0b86a22a}
+
+
+\-Definition at line 69 of file \-Controller\-Statistics.\-h.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controller\-Statistics.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,599 @@
+\section{control\-\_\-toolbox\-:\-:\-Pid \-Class \-Reference}
+\label{classcontrol__toolbox_1_1Pid}\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}}
+
+
+\-A basic pid class.  
+
+
+
+
+{\ttfamily \#include $<$pid.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf compute\-Command} (double error, ros\-::\-Duration dt)
+\begin{DoxyCompactList}\small\item\em \-Set the \-P\-I\-D error and compute the \-P\-I\-D command with nonuniform time step size. \-The derivative error is computed from the change in the error and the timestep {\ttfamily dt}. \end{DoxyCompactList}\item 
+double {\bf compute\-Command} (double error, double error\-\_\-dot, ros\-::\-Duration dt)
+\begin{DoxyCompactList}\small\item\em \-Set the \-P\-I\-D error and compute the \-P\-I\-D command with nonuniform time step size. \-This also allows the user to pass in a precomputed derivative error. \end{DoxyCompactList}\item 
+double {\bf get\-Current\-Cmd} ()
+\begin{DoxyCompactList}\small\item\em \-Return current command for this \-P\-I\-D controller. \end{DoxyCompactList}\item 
+void {\bf get\-Current\-P\-I\-D\-Errors} (double $\ast$pe, double $\ast$ie, double $\ast$de)
+\begin{DoxyCompactList}\small\item\em \-Return \-P\-I\-D error terms for the controller. \end{DoxyCompactList}\item 
+void {\bf get\-Gains} (double \&p, double \&i, double \&d, double \&i\-\_\-max, double \&i\-\_\-min)
+\begin{DoxyCompactList}\small\item\em \-Get \-P\-I\-D gains for the controller. \end{DoxyCompactList}\item 
+bool {\bf init} (const ros\-::\-Node\-Handle \&n)
+\begin{DoxyCompactList}\small\item\em \-Initialize \-P\-I\-D with the parameters in a \-Node\-Handle namespace. \end{DoxyCompactList}\item 
+bool {\bf init\-Param} (const std\-::string \&prefix)
+\begin{DoxyCompactList}\small\item\em \-Initialize \-P\-I\-D with the parameters in a namespace. \end{DoxyCompactList}\item 
+void {\bf init\-Pid} (double p, double i, double d, double i\-\_\-max, double i\-\_\-min)
+\begin{DoxyCompactList}\small\item\em \-Initialize \-P\-I\-D-\/gains and integral term limits\-:[i\-Max\-:i\-Min]-\/[\-I1\-:\-I2]. \end{DoxyCompactList}\item 
+bool {\bf init\-Xml} (\-Ti\-Xml\-Element $\ast$config)
+\item 
+{\bf \-Pid} \& {\bf operator=} (const {\bf \-Pid} \&p)
+\item 
+{\bf \-Pid} (double p=0.\-0, double i=0.\-0, double d=0.\-0, double i\-\_\-max=0.\-0, double i\-\_\-min=-\/0.\-0)
+\begin{DoxyCompactList}\small\item\em \-Constructor, zeros out \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} values when created and initialize \-Pid-\/gains and integral term limits. \end{DoxyCompactList}\item 
+void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em \-Reset the state of this \-P\-I\-D controller. \end{DoxyCompactList}\item 
+void {\bf set\-Current\-Cmd} (double cmd)
+\begin{DoxyCompactList}\small\item\em \-Set current command for this \-P\-I\-D controller. \end{DoxyCompactList}\item 
+void {\bf set\-Gains} (double p, double i, double d, double i\-\_\-max, double i\-\_\-min)
+\begin{DoxyCompactList}\small\item\em \-Set \-P\-I\-D gains for the controller. \end{DoxyCompactList}\item 
+\-R\-O\-S\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D double {\bf update\-Pid} (double p\-\_\-error, ros\-::\-Duration dt)
+\begin{DoxyCompactList}\small\item\em \-Update the \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} loop with nonuniform time step size. \end{DoxyCompactList}\item 
+\-R\-O\-S\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D double {\bf update\-Pid} (double error, double error\-\_\-dot, ros\-::\-Duration dt)
+\begin{DoxyCompactList}\small\item\em \-Update the \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} loop with nonuniform time step size. \-This update call allows the user to pass in a precomputed derivative error. \end{DoxyCompactList}\item 
+{\bf $\sim$\-Pid} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor of \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf cmd\-\_\-}
+\item 
+double {\bf d\-\_\-error\-\_\-}
+\item 
+double {\bf d\-\_\-gain\-\_\-}
+\item 
+double {\bf i\-\_\-gain\-\_\-}
+\item 
+double {\bf i\-\_\-max\-\_\-}
+\item 
+double {\bf i\-\_\-min\-\_\-}
+\item 
+double {\bf i\-\_\-term\-\_\-}
+\item 
+double {\bf p\-\_\-error\-\_\-}
+\item 
+double {\bf p\-\_\-error\-\_\-last\-\_\-}
+\item 
+double {\bf p\-\_\-gain\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A basic pid class. 
+
+\-This class implements a generic structure that can be used to create a wide range of pid controllers. \-It can function independently or be subclassed to provide more specific controls based on a particular control loop.
+
+\-In particular, this class implements the standard pid equation\-:
+
+$command = -p_{term} - i_{term} - d_{term} $
+
+where\-: \par
+ 
+\begin{DoxyItemize}
+\item $ p_{term} = p_{gain} * p_{error} $ 
+\item $ i_{term} = i_{term} + \int{i_{gain} * p_{error} * dt} $ 
+\item $ d_{term} = d_{gain} * d_{error} $ 
+\item $ d_{error} = (p_{error} - p_{error last}) / dt $ 
+\end{DoxyItemize}
+
+given\-:\par
+ 
+\begin{DoxyItemize}
+\item $ p_{error} = p_{state} - p_{target} $. 
+\end{DoxyItemize}\subsection{\-R\-O\-S interface}\label{classcontrol__toolbox_1_1Pid_ROS}
+
+\begin{DoxyParams}{\-Parameters}
+{\em p} & \-Proportional gain\\
+\hline
+{\em d} & \-Derivative gain\\
+\hline
+{\em i} & \-Integral gain\\
+\hline
+{\em i\-\_\-clamp} & \-Min/max bounds for the integral windup, the clamp is applied to the $i_{term}$\\
+\hline
+\end{DoxyParams}
+\subsection{\-Usage}\label{classcontrol__toolbox_1_1Pid_Usage}
+\-To use the \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} class, you should first call some version of \doxyref{init()}{p.}{classcontrol__toolbox_1_1Pid_a7ce13102646c5c4970e8c49493a9333f} (in non-\/realtime) and then call \doxyref{update\-Pid()}{p.}{classcontrol__toolbox_1_1Pid_a3b67ef1db5948f1da331e54171c2667e} at every update step. \-For example\-:
+
+\begin{DoxyVerb}
+control_toolbox::Pid pid;
+pid.initPid(6.0, 1.0, 2.0, 0.3, -0.3);
+double position_desi_ = 0.5;
+...
+ros::Time last_time = ros::Time::now();
+while (true) {
+  ros::Time time = ros::Time::now();
+  double effort = pid.updatePid(currentPosition() - position_desi_, time - last_time);
+  last_time = time;
+}
+\end{DoxyVerb}
+ 
+
+\-Definition at line 105 of file pid.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!\-Pid@{\-Pid}}
+\index{\-Pid@{\-Pid}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{\-Pid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Pid\-::\-Pid} (
+\begin{DoxyParamCaption}
+\item[{double}]{p = {\ttfamily 0.0}, }
+\item[{double}]{i = {\ttfamily 0.0}, }
+\item[{double}]{d = {\ttfamily 0.0}, }
+\item[{double}]{i\-\_\-max = {\ttfamily 0.0}, }
+\item[{double}]{i\-\_\-min = {\ttfamily -\/0.0}}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_af52fbb61551e352f5b2d4b8ba3640c32}
+
+
+\-Constructor, zeros out \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} values when created and initialize \-Pid-\/gains and integral term limits. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em p} & \-The proportional gain. \\
+\hline
+{\em i} & \-The integral gain. \\
+\hline
+{\em d} & \-The derivative gain. \\
+\hline
+{\em i\-\_\-max} & \-The integral upper limit. \\
+\hline
+{\em i\-\_\-min} & \-The integral lower limit. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 42 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!$\sim$\-Pid@{$\sim$\-Pid}}
+\index{$\sim$\-Pid@{$\sim$\-Pid}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{$\sim$\-Pid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Pid\-::$\sim$\-Pid} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a53f2167704f04158500919a72081c298}
+
+
+\-Destructor of \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} class. 
+
+
+
+\-Definition at line 48 of file pid.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!compute\-Command@{compute\-Command}}
+\index{compute\-Command@{compute\-Command}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{compute\-Command}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::compute\-Command} (
+\begin{DoxyParamCaption}
+\item[{double}]{error, }
+\item[{ros\-::\-Duration}]{dt}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a8956ddfd932118d3010ee6ccbf53fb6e}
+
+
+\-Set the \-P\-I\-D error and compute the \-P\-I\-D command with nonuniform time step size. \-The derivative error is computed from the change in the error and the timestep {\ttfamily dt}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em error} & \-Error since last call (error = target -\/ state) \\
+\hline
+{\em dt} & \-Change in time since last call\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-P\-I\-D command 
+\end{DoxyReturn}
+
+
+\-Definition at line 124 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!compute\-Command@{compute\-Command}}
+\index{compute\-Command@{compute\-Command}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{compute\-Command}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::compute\-Command} (
+\begin{DoxyParamCaption}
+\item[{double}]{error, }
+\item[{double}]{error\-\_\-dot, }
+\item[{ros\-::\-Duration}]{dt}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_ab3659453dbdf1b4261cc56f4cb2f5bf1}
+
+
+\-Set the \-P\-I\-D error and compute the \-P\-I\-D command with nonuniform time step size. \-This also allows the user to pass in a precomputed derivative error. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em error} & \-Error since last call (error = target -\/ state) \\
+\hline
+{\em error\-\_\-dot} & d(\-Error)/dt since last call \\
+\hline
+{\em dt} & \-Change in time since last call\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-P\-I\-D command 
+\end{DoxyReturn}
+
+
+\-Definition at line 184 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!get\-Current\-Cmd@{get\-Current\-Cmd}}
+\index{get\-Current\-Cmd@{get\-Current\-Cmd}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{get\-Current\-Cmd}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::get\-Current\-Cmd} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a78b3994058cd96de4c227a9893640b12}
+
+
+\-Return current command for this \-P\-I\-D controller. 
+
+
+
+\-Definition at line 243 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!get\-Current\-P\-I\-D\-Errors@{get\-Current\-P\-I\-D\-Errors}}
+\index{get\-Current\-P\-I\-D\-Errors@{get\-Current\-P\-I\-D\-Errors}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{get\-Current\-P\-I\-D\-Errors}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Pid\-::get\-Current\-P\-I\-D\-Errors} (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{pe, }
+\item[{double $\ast$}]{ie, }
+\item[{double $\ast$}]{de}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a71f8db012a3b70b4ada0e3d70ee851dc}
+
+
+\-Return \-P\-I\-D error terms for the controller. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pe} & \-The proportional error. \\
+\hline
+{\em ie} & \-The integral error. \\
+\hline
+{\em de} & \-The derivative error. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 248 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!get\-Gains@{get\-Gains}}
+\index{get\-Gains@{get\-Gains}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{get\-Gains}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Pid\-::get\-Gains} (
+\begin{DoxyParamCaption}
+\item[{double \&}]{p, }
+\item[{double \&}]{i, }
+\item[{double \&}]{d, }
+\item[{double \&}]{i\-\_\-max, }
+\item[{double \&}]{i\-\_\-min}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a94168b013a704882750076ad0755210c}
+
+
+\-Get \-P\-I\-D gains for the controller. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em p} & \-The proportional gain. \\
+\hline
+{\em i} & \-The integral gain. \\
+\hline
+{\em d} & \-The derivative gain. \\
+\hline
+{\em i\-\_\-max} & \-The max integral windup. \\
+\hline
+{\em i\-\_\-mim} & \-The min integral windup. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 67 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!init@{init}}
+\index{init@{init}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf control\-\_\-toolbox\-::\-Pid\-::init} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Node\-Handle \&}]{n}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a7ce13102646c5c4970e8c49493a9333f}
+
+
+\-Initialize \-P\-I\-D with the parameters in a \-Node\-Handle namespace. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em n} & \-The \-Node\-Handle. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 105 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!init\-Param@{init\-Param}}
+\index{init\-Param@{init\-Param}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{init\-Param}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf control\-\_\-toolbox\-::\-Pid\-::init\-Param} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{prefix}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_ae5fbf409cf16f6c6937a6fb7bbbefe9c}
+
+
+\-Initialize \-P\-I\-D with the parameters in a namespace. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em n} & \-The namespace prefix. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 85 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!init\-Pid@{init\-Pid}}
+\index{init\-Pid@{init\-Pid}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{init\-Pid}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Pid\-::init\-Pid} (
+\begin{DoxyParamCaption}
+\item[{double}]{p, }
+\item[{double}]{i, }
+\item[{double}]{d, }
+\item[{double}]{i\-\_\-max, }
+\item[{double}]{i\-\_\-min}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_ac2feda3ef78f6cf7a655175da94c41a0}
+
+
+\-Initialize \-P\-I\-D-\/gains and integral term limits\-:[i\-Max\-:i\-Min]-\/[\-I1\-:\-I2]. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em p} & \-The proportional gain. \\
+\hline
+{\em i} & \-The integral gain. \\
+\hline
+{\em d} & \-The derivative gain. \\
+\hline
+{\em i\-\_\-max} & \-The integral upper limit. \\
+\hline
+{\em i\-\_\-min} & \-The integral lower limit. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 52 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!init\-Xml@{init\-Xml}}
+\index{init\-Xml@{init\-Xml}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{init\-Xml}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf control\-\_\-toolbox\-::\-Pid\-::init\-Xml} (
+\begin{DoxyParamCaption}
+\item[{\-Ti\-Xml\-Element $\ast$}]{config}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a96537c793c170bc8b835deee8848c749}
+
+
+\-Definition at line 91 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!operator=@{operator=}}
+\index{operator=@{operator=}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pid}\& control\-\_\-toolbox\-::\-Pid\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pid} \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontrol__toolbox_1_1Pid_abbe8cfc856009fa770ebb7e5d0b14672}
+
+
+\-Definition at line 250 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!reset@{reset}}
+\index{reset@{reset}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Pid\-::reset} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a7205355ee01f4a66bc4237103d65674b}
+
+
+\-Reset the state of this \-P\-I\-D controller. 
+
+
+
+\-Definition at line 58 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!set\-Current\-Cmd@{set\-Current\-Cmd}}
+\index{set\-Current\-Cmd@{set\-Current\-Cmd}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{set\-Current\-Cmd}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Pid\-::set\-Current\-Cmd} (
+\begin{DoxyParamCaption}
+\item[{double}]{cmd}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a8e4d27c0616075f108fa6d71866f4337}
+
+
+\-Set current command for this \-P\-I\-D controller. 
+
+
+
+\-Definition at line 238 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!set\-Gains@{set\-Gains}}
+\index{set\-Gains@{set\-Gains}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{set\-Gains}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Pid\-::set\-Gains} (
+\begin{DoxyParamCaption}
+\item[{double}]{p, }
+\item[{double}]{i, }
+\item[{double}]{d, }
+\item[{double}]{i\-\_\-max, }
+\item[{double}]{i\-\_\-min}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_afd1e01bb3655b34c8dec533f0fa9d275}
+
+
+\-Set \-P\-I\-D gains for the controller. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em p} & \-The proportional gain. \\
+\hline
+{\em i} & \-The integral gain. \\
+\hline
+{\em d} & \-The derivative gain. \\
+\hline
+{\em i\-\_\-max} & \-The integral upper limit. \\
+\hline
+{\em i\-\_\-min} & \-The integral lower limit. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 76 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!update\-Pid@{update\-Pid}}
+\index{update\-Pid@{update\-Pid}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{update\-Pid}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::update\-Pid} (
+\begin{DoxyParamCaption}
+\item[{double}]{p\-\_\-error, }
+\item[{ros\-::\-Duration}]{dt}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a3b67ef1db5948f1da331e54171c2667e}
+
+
+\-Update the \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} loop with nonuniform time step size. 
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[{\bf \-Deprecated}]\-This function assumes {\ttfamily  p\-\_\-error = (state -\/ target) } which is an unconventional definition of the error. \-Please use set\-Error instead, which assumes {\ttfamily  error = (target -\/ state) }. \-Note that calls to set\-Error should not be mixed with calls to \doxyref{update\-Pid}{p.}{classcontrol__toolbox_1_1Pid_a3b67ef1db5948f1da331e54171c2667e}.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em p\-\_\-error} & \-Error since last call (p\-\_\-state-\/p\-\_\-target) \\
+\hline
+{\em dt} & \-Change in time since last call \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 154 of file pid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!update\-Pid@{update\-Pid}}
+\index{update\-Pid@{update\-Pid}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{update\-Pid}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::update\-Pid} (
+\begin{DoxyParamCaption}
+\item[{double}]{error, }
+\item[{double}]{error\-\_\-dot, }
+\item[{ros\-::\-Duration}]{dt}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Pid_a59a052f4d6bf02a742ed6046d24374cf}
+
+
+\-Update the \doxyref{\-Pid}{p.}{classcontrol__toolbox_1_1Pid} loop with nonuniform time step size. \-This update call allows the user to pass in a precomputed derivative error. 
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[{\bf \-Deprecated}]\-This function assumes {\ttfamily  p\-\_\-error = (state -\/ target) } which is an unconventional definition of the error. \-Please use set\-Error instead, which assumes {\ttfamily  error = (target -\/ state) }. \-Note that calls to set\-Error should not be mixed with calls to \doxyref{update\-Pid}{p.}{classcontrol__toolbox_1_1Pid_a3b67ef1db5948f1da331e54171c2667e}.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em error} & \-Error since last call (p\-\_\-state-\/p\-\_\-target) \\
+\hline
+{\em error\-\_\-dot} & d(\-Error)/dt since last call \\
+\hline
+{\em dt} & \-Change in time since last call \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 210 of file pid.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!cmd\-\_\-@{cmd\-\_\-}}
+\index{cmd\-\_\-@{cmd\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{cmd\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::cmd\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_ae00329b76bf056d39e9a85d9c67df531}
+\-Command to send. 
+
+\-Definition at line 275 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!d\-\_\-error\-\_\-@{d\-\_\-error\-\_\-}}
+\index{d\-\_\-error\-\_\-@{d\-\_\-error\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{d\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::d\-\_\-error\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_a9837edc9d20a2ec00e501935866dfbbc}
+\-Derivative error. 
+
+\-Definition at line 268 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!d\-\_\-gain\-\_\-@{d\-\_\-gain\-\_\-}}
+\index{d\-\_\-gain\-\_\-@{d\-\_\-gain\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{d\-\_\-gain\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::d\-\_\-gain\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_a0af3f46ae3068b89900967b1425a8671}
+\-Derivative gain. 
+
+\-Definition at line 272 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!i\-\_\-gain\-\_\-@{i\-\_\-gain\-\_\-}}
+\index{i\-\_\-gain\-\_\-@{i\-\_\-gain\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{i\-\_\-gain\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::i\-\_\-gain\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_ac3ebc67cb478a3056f359926cf513882}
+\-Integral gain. 
+
+\-Definition at line 271 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!i\-\_\-max\-\_\-@{i\-\_\-max\-\_\-}}
+\index{i\-\_\-max\-\_\-@{i\-\_\-max\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{i\-\_\-max\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::i\-\_\-max\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_aa3abb510e92b33eb90e3e0166aaaecde}
+\-Maximum allowable integral term. 
+
+\-Definition at line 273 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!i\-\_\-min\-\_\-@{i\-\_\-min\-\_\-}}
+\index{i\-\_\-min\-\_\-@{i\-\_\-min\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{i\-\_\-min\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::i\-\_\-min\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_a7cccf2b7ca062775b17ff62204bb3c32}
+\-Minimum allowable integral term. 
+
+\-Definition at line 274 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!i\-\_\-term\-\_\-@{i\-\_\-term\-\_\-}}
+\index{i\-\_\-term\-\_\-@{i\-\_\-term\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{i\-\_\-term\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::i\-\_\-term\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_aed58f10eac176fe579cf3b56b26c2324}
+\-Integral term. 
+
+\-Definition at line 269 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!p\-\_\-error\-\_\-@{p\-\_\-error\-\_\-}}
+\index{p\-\_\-error\-\_\-@{p\-\_\-error\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{p\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::p\-\_\-error\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_a6f0503cbf257d7d5ed77a212f2e52f70}
+\-Position error. 
+
+\-Definition at line 267 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!p\-\_\-error\-\_\-last\-\_\-@{p\-\_\-error\-\_\-last\-\_\-}}
+\index{p\-\_\-error\-\_\-last\-\_\-@{p\-\_\-error\-\_\-last\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{p\-\_\-error\-\_\-last\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::p\-\_\-error\-\_\-last\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_a8c6519a93f8ed034b9167e502e5f8a4d}
+\-\_\-\-Save position state for derivative state calculation. 
+
+\-Definition at line 266 of file pid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Pid@{control\-\_\-toolbox\-::\-Pid}!p\-\_\-gain\-\_\-@{p\-\_\-gain\-\_\-}}
+\index{p\-\_\-gain\-\_\-@{p\-\_\-gain\-\_\-}!control_toolbox::Pid@{control\-\_\-toolbox\-::\-Pid}}
+\subsubsection[{p\-\_\-gain\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Pid\-::p\-\_\-gain\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Pid_aed003e2f6c9ac822d5668cba67a9fa76}
+\-Proportional gain. 
+
+\-Definition at line 270 of file pid.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf pid.\-h}\item 
+{\bf pid.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,14 @@
+authors: Wim Meeussen
+brief: ''
+depends:
+- controller_manager_msgs
+- pluginlib
+- controller_interface
+- hardware_interface
+- realtime_tools
+description: "\n        The controller manager.\n  "
+license: BSD
+msgs: []
+package_type: package
+srvs: []
+url: https://bitbucket.org/hidof/controller-manager/wiki/

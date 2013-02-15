@@ -1,0 +1,208 @@
+\section{control\-\_\-toolbox\-:\-:\-Sinusoid \-Class \-Reference}
+\label{classcontrol__toolbox_1_1Sinusoid}\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+
+
+\-A basic sine class.  
+
+
+
+
+{\ttfamily \#include $<$sinusoid.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf debug} ()
+\item 
+bool {\bf init\-Xml} (\-Ti\-Xml\-Element $\ast$ti\-\_\-xml\-\_\-element)
+\begin{DoxyCompactList}\small\item\em \-Initializes the parameters of the sine wave from the given xml element. \end{DoxyCompactList}\item 
+{\bf \-Sinusoid} ()
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+{\bf \-Sinusoid} (double offset, double amplitude, double frequency, double phase)
+\begin{DoxyCompactList}\small\item\em \-Constructor which intializes values. \end{DoxyCompactList}\item 
+double {\bf update} (double time, double \&qd, double \&qdd)
+\begin{DoxyCompactList}\small\item\em \-Gets the value and derivatives of the sinusoid at a given time. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Sinusoid} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf amplitude\-\_\-}
+\item 
+double {\bf frequency\-\_\-}
+\item 
+double {\bf offset\-\_\-}
+\item 
+double {\bf phase\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A basic sine class. 
+
+\-This class calculates the output for a sine wave and its derivatives, given the amplitude, phase, frequency and offset.\par
+ 
+
+\-Definition at line 54 of file sinusoid.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!\-Sinusoid@{\-Sinusoid}}
+\index{\-Sinusoid@{\-Sinusoid}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{\-Sinusoid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Sinusoid\-::\-Sinusoid} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Sinusoid_acd8dd3d61d8e15b724322543d21efb9d}
+
+
+\-Constructor. 
+
+
+
+\-Definition at line 72 of file sinusoid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!\-Sinusoid@{\-Sinusoid}}
+\index{\-Sinusoid@{\-Sinusoid}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{\-Sinusoid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Sinusoid\-::\-Sinusoid} (
+\begin{DoxyParamCaption}
+\item[{double}]{offset, }
+\item[{double}]{amplitude, }
+\item[{double}]{frequency, }
+\item[{double}]{phase}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Sinusoid_a43d81899ef9bd6299e5b13ba8fc87665}
+
+
+\-Constructor which intializes values. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em offset} & \-A \-D\-C offset to be added to the sine wave \\
+\hline
+{\em amplitude} & \-Amplitude of the sine wave \\
+\hline
+{\em frequency} & \-Frequency of the sine wave \\
+\hline
+{\em phase} & \-Phase (in radians) of the sine wave at t=0 \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 46 of file sinusoid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!$\sim$\-Sinusoid@{$\sim$\-Sinusoid}}
+\index{$\sim$\-Sinusoid@{$\sim$\-Sinusoid}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{$\sim$\-Sinusoid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Sinusoid\-::$\sim$\-Sinusoid} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcontrol__toolbox_1_1Sinusoid_af1413fd7744d419519bf8290e19e02c8}
+\-Destructor 
+
+\-Definition at line 68 of file sinusoid.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!debug@{debug}}
+\index{debug@{debug}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{debug}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf control\-\_\-toolbox\-::\-Sinusoid\-::debug} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Sinusoid_a42affe7c4e8314d287a229a94e4c7a29}
+\-Prints the parameters of the sine wave to stdout (for debugging) 
+
+\-Definition at line 88 of file sinusoid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!init\-Xml@{init\-Xml}}
+\index{init\-Xml@{init\-Xml}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{init\-Xml}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf control\-\_\-toolbox\-::\-Sinusoid\-::init\-Xml} (
+\begin{DoxyParamCaption}
+\item[{\-Ti\-Xml\-Element $\ast$}]{ti\-\_\-xml\-\_\-element}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Sinusoid_aa56daa540087852b82dae54e2a42b32a}
+
+
+\-Initializes the parameters of the sine wave from the given xml element. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em ti\-\_\-xml\-\_\-element} & \-This \-X\-M\-L element needs to contain the following attributes\-: offset, amplitude, frequency, phase \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if successful, false if not 
+\end{DoxyReturn}
+
+
+\-Definition at line 54 of file sinusoid.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!update@{update}}
+\index{update@{update}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sinusoid\-::update} (
+\begin{DoxyParamCaption}
+\item[{double}]{time, }
+\item[{double \&}]{qd, }
+\item[{double \&}]{qdd}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Sinusoid_a909f031955b95c78329f8587c359ff98}
+
+
+\-Gets the value and derivatives of the sinusoid at a given time. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em time} & \-Time at which to sample the sine wave \\
+\hline
+{\em qd} & (output) \-The derivative of the sine wave \\
+\hline
+{\em qdd} & (output) \-Second derivative of the sine wave \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The sampled value of the sine wave 
+\end{DoxyReturn}
+
+
+\-Definition at line 76 of file sinusoid.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!amplitude\-\_\-@{amplitude\-\_\-}}
+\index{amplitude\-\_\-@{amplitude\-\_\-}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{amplitude\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sinusoid\-::amplitude\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Sinusoid_ab6e3cb9937039f1aa6d2398aaff26fa8}
+\-Amplitude of the sine wave. 
+
+\-Definition at line 102 of file sinusoid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!frequency\-\_\-@{frequency\-\_\-}}
+\index{frequency\-\_\-@{frequency\-\_\-}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{frequency\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sinusoid\-::frequency\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Sinusoid_aa0827d0f5f96784079476989ce51882c}
+\-Frequency of the sine wave. 
+
+\-Definition at line 103 of file sinusoid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!offset\-\_\-@{offset\-\_\-}}
+\index{offset\-\_\-@{offset\-\_\-}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{offset\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sinusoid\-::offset\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Sinusoid_a328d0ffb59a6754c23c07f65c6de7c0b}
+\-D\-C offset of the sine wave. 
+
+\-Definition at line 101 of file sinusoid.\-h.
+
+\index{control\-\_\-toolbox\-::\-Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}!phase\-\_\-@{phase\-\_\-}}
+\index{phase\-\_\-@{phase\-\_\-}!control_toolbox::Sinusoid@{control\-\_\-toolbox\-::\-Sinusoid}}
+\subsubsection[{phase\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Sinusoid\-::phase\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Sinusoid_a96223662b81c22fe707e571e0c9fd94b}
+\-Phase of the sine wave at t=0. 
+
+\-Definition at line 104 of file sinusoid.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf sinusoid.\-h}\item 
+{\bf sinusoid.\-cpp}\end{DoxyCompactItemize}

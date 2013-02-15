@@ -1,0 +1,38 @@
+\section{filters \-Namespace \-Reference}
+\label{namespacefilters}\index{filters@{filters}}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static const \-T \& {\bf clamp} (const \-T \&a, const \-T \&b, const \-T \&c)
+\item 
+static double {\bf exponential\-Smoothing} (double current\-\_\-raw\-\_\-value, double last\-\_\-smoothed\-\_\-value, double alpha)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\index{filters@{filters}!clamp@{clamp}}
+\index{clamp@{clamp}!filters@{filters}}
+\subsubsection[{clamp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static const \-T\& {\bf filters\-::clamp} (
+\begin{DoxyParamCaption}
+\item[{const \-T \&}]{a, }
+\item[{const \-T \&}]{b, }
+\item[{const \-T \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{namespacefilters_ac558228b7f0e0dfa0f64dea5a9ad5fd5}
+\-Clamp value a between b and c 
+
+\-Definition at line 45 of file filters.\-h.
+
+\index{filters@{filters}!exponential\-Smoothing@{exponential\-Smoothing}}
+\index{exponential\-Smoothing@{exponential\-Smoothing}!filters@{filters}}
+\subsubsection[{exponential\-Smoothing}]{\setlength{\rightskip}{0pt plus 5cm}static double {\bf filters\-::exponential\-Smoothing} (
+\begin{DoxyParamCaption}
+\item[{double}]{current\-\_\-raw\-\_\-value, }
+\item[{double}]{last\-\_\-smoothed\-\_\-value, }
+\item[{double}]{alpha}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{namespacefilters_a40b9d9eea47f418d18914b8517a78c0d}
+\-Exponential smoothing filter. \-Alpha is between 0 and 1. \-Values closer to 0 weight the last smoothed value more heavily 
+
+\-Definition at line 52 of file filters.\-h.
+

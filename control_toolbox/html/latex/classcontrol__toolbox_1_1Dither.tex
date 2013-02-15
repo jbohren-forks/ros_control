@@ -1,0 +1,159 @@
+\section{control\-\_\-toolbox\-:\-:\-Dither \-Class \-Reference}
+\label{classcontrol__toolbox_1_1Dither}\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}}
+
+
+\-Gives white noise at specified amplitude.  
+
+
+
+
+{\ttfamily \#include $<$dither.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Dither} ()
+\item 
+bool {\bf init} (const double \&amplitude, const double \&seed)
+\item 
+double {\bf update} ()
+\begin{DoxyCompactList}\small\item\em \-Get next \-Gaussian white noise point. \-Called in \-R\-T loop. \end{DoxyCompactList}\item 
+{\bf $\sim$\-Dither} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf amplitude\-\_\-}
+\item 
+bool {\bf has\-\_\-saved\-\_\-value\-\_\-}
+\item 
+double {\bf s\-\_\-}
+\item 
+double {\bf saved\-\_\-value\-\_\-}
+\item 
+unsigned short {\bf seed\-\_\-} [3]
+\item 
+double {\bf x\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Gives white noise at specified amplitude. 
+
+\-This class gives white noise at the given amplitude when \doxyref{update()}{p.}{classcontrol__toolbox_1_1Dither_a782f59e37dd7ab8219b3e24ddf17ed57} is called. \-It can be used to vibrate joints or to break static friction. 
+
+\-Definition at line 57 of file dither.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!\-Dither@{\-Dither}}
+\index{\-Dither@{\-Dither}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{\-Dither}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Dither\-::\-Dither} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Dither_ac07a44359384b30f20f6bef3c20ec974}
+
+
+\-Definition at line 41 of file dither.\-cpp.
+
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!$\sim$\-Dither@{$\sim$\-Dither}}
+\index{$\sim$\-Dither@{$\sim$\-Dither}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{$\sim$\-Dither}]{\setlength{\rightskip}{0pt plus 5cm}{\bf control\-\_\-toolbox\-::\-Dither\-::$\sim$\-Dither} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Dither_ac3f5be050d23a37bb62ffb876ca8b51a}
+
+
+\-Destructor. 
+
+
+
+\-Definition at line 46 of file dither.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!init@{init}}
+\index{init@{init}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf control\-\_\-toolbox\-::\-Dither\-::init} (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{amplitude, }
+\item[{const double \&}]{seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcontrol__toolbox_1_1Dither_ab4ae13597f908073f39440c22f2f52ff}
+
+
+\-Definition at line 80 of file dither.\-h.
+
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!update@{update}}
+\index{update@{update}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Dither\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcontrol__toolbox_1_1Dither_a782f59e37dd7ab8219b3e24ddf17ed57}
+
+
+\-Get next \-Gaussian white noise point. \-Called in \-R\-T loop. 
+
+\begin{DoxyReturn}{\-Returns}
+\-White noise of given amplitude. 
+\end{DoxyReturn}
+
+
+\-Definition at line 50 of file dither.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!amplitude\-\_\-@{amplitude\-\_\-}}
+\index{amplitude\-\_\-@{amplitude\-\_\-}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{amplitude\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Dither\-::amplitude\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Dither_a182f503ad0ba8dcce746a80365269121}
+\-Amplitude of the sweep. 
+
+\-Definition at line 103 of file dither.\-h.
+
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!has\-\_\-saved\-\_\-value\-\_\-@{has\-\_\-saved\-\_\-value\-\_\-}}
+\index{has\-\_\-saved\-\_\-value\-\_\-@{has\-\_\-saved\-\_\-value\-\_\-}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{has\-\_\-saved\-\_\-value\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf control\-\_\-toolbox\-::\-Dither\-::has\-\_\-saved\-\_\-value\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Dither_a182728e8c95dda7f6a9899b5b63fb040}
+
+
+\-Definition at line 105 of file dither.\-h.
+
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!s\-\_\-@{s\-\_\-}}
+\index{s\-\_\-@{s\-\_\-}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{s\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Dither\-::s\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Dither_a5fccc7b3f9a5601b60e2fca9ff6a4222}
+
+
+\-Definition at line 106 of file dither.\-h.
+
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!saved\-\_\-value\-\_\-@{saved\-\_\-value\-\_\-}}
+\index{saved\-\_\-value\-\_\-@{saved\-\_\-value\-\_\-}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{saved\-\_\-value\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Dither\-::saved\-\_\-value\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Dither_a1d3599b39eb0b3ddd692be5b5ff7e58c}
+
+
+\-Definition at line 104 of file dither.\-h.
+
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!seed\-\_\-@{seed\-\_\-}}
+\index{seed\-\_\-@{seed\-\_\-}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{seed\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short {\bf control\-\_\-toolbox\-::\-Dither\-::seed\-\_\-}[3]\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Dither_a6e8eebf0e7391d81325cefb2a2233bf7}
+
+
+\-Definition at line 108 of file dither.\-h.
+
+\index{control\-\_\-toolbox\-::\-Dither@{control\-\_\-toolbox\-::\-Dither}!x\-\_\-@{x\-\_\-}}
+\index{x\-\_\-@{x\-\_\-}!control_toolbox::Dither@{control\-\_\-toolbox\-::\-Dither}}
+\subsubsection[{x\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf control\-\_\-toolbox\-::\-Dither\-::x\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classcontrol__toolbox_1_1Dither_a6052423b418e1a61fc4fd5df13aff332}
+
+
+\-Definition at line 107 of file dither.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf dither.\-h}\item 
+{\bf dither.\-cpp}\end{DoxyCompactItemize}

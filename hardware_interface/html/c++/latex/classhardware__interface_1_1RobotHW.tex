@@ -1,0 +1,159 @@
+\section{hardware\-\_\-interface\-:\-:\-Robot\-H\-W \-Class \-Reference}
+\label{classhardware__interface_1_1RobotHW}\index{hardware\-\_\-interface\-::\-Robot\-H\-W@{hardware\-\_\-interface\-::\-Robot\-H\-W}}
+
+
+\-Robot \-Hardware \-Interface and \-Resource \-Manager.  
+
+
+
+
+{\ttfamily \#include $<$robot\-\_\-hw.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Robot\-H\-W} ()
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf \-Resource \-Management}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf check\-For\-Conflict} (const std\-::list$<$ {\bf \-Controller\-Info} $>$ \&info) const 
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf \-Hardware \-Interface \-Management}\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void {\bf register\-Interface} (\-T $\ast$hw)
+\begin{DoxyCompactList}\small\item\em \-Register a hardware interface. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\\-T $\ast$ {\bf get} ()
+\begin{DoxyCompactList}\small\item\em \-Get a hardware interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Private \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::map$<$ std\-::string, \*
+{\bf \-Hardware\-Interface} $\ast$ $>$ {\bf \-Interface\-Map}
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Interface\-Map} {\bf interfaces\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Robot \-Hardware \-Interface and \-Resource \-Manager. 
+
+\-This class provides a standardized interface to a set of robot hardware interfaces to the controller manager. \-It performs resource conflict checking for a given set of controllers and maintains a map of hardware interfaces. \-It is meant to be used as a base class for abstracting custom robot hardware.
+
+\-The hardware interface map (\doxyref{interfaces\-\_\-}{p.}{classhardware__interface_1_1RobotHW_aff617f06c50fafbe80e95a66df48db1b}) is a 1-\/to-\/1 map between the nams of interface types derived from \doxyref{\-Hardware\-Interface}{p.}{classhardware__interface_1_1HardwareInterface} and instances of those interface types. 
+
+\-Definition at line 53 of file robot\-\_\-hw.\-h.
+
+
+
+\subsection{\-Member \-Typedef \-Documentation}
+\index{hardware\-\_\-interface\-::\-Robot\-H\-W@{hardware\-\_\-interface\-::\-Robot\-H\-W}!\-Interface\-Map@{\-Interface\-Map}}
+\index{\-Interface\-Map@{\-Interface\-Map}!hardware_interface::RobotHW@{hardware\-\_\-interface\-::\-Robot\-H\-W}}
+\subsubsection[{\-Interface\-Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::map$<$std\-::string, {\bf \-Hardware\-Interface}$\ast$$>$ {\bf hardware\-\_\-interface\-::\-Robot\-H\-W\-::\-Interface\-Map}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhardware__interface_1_1RobotHW_a3272b83ff82468de130926610cc1b9bc}
+
+
+\-Definition at line 145 of file robot\-\_\-hw.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{hardware\-\_\-interface\-::\-Robot\-H\-W@{hardware\-\_\-interface\-::\-Robot\-H\-W}!\-Robot\-H\-W@{\-Robot\-H\-W}}
+\index{\-Robot\-H\-W@{\-Robot\-H\-W}!hardware_interface::RobotHW@{hardware\-\_\-interface\-::\-Robot\-H\-W}}
+\subsubsection[{\-Robot\-H\-W}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hardware\-\_\-interface\-::\-Robot\-H\-W\-::\-Robot\-H\-W} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1RobotHW_ade9bd05d3157dc2d278bcb2d19d6b6e6}
+
+
+\-Definition at line 56 of file robot\-\_\-hw.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{hardware\-\_\-interface\-::\-Robot\-H\-W@{hardware\-\_\-interface\-::\-Robot\-H\-W}!check\-For\-Conflict@{check\-For\-Conflict}}
+\index{check\-For\-Conflict@{check\-For\-Conflict}!hardware_interface::RobotHW@{hardware\-\_\-interface\-::\-Robot\-H\-W}}
+\subsubsection[{check\-For\-Conflict}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf hardware\-\_\-interface\-::\-Robot\-H\-W\-::check\-For\-Conflict} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ {\bf \-Controller\-Info} $>$ \&}]{info}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classhardware__interface_1_1RobotHW_a96a73831d8e36a746102752383feec61}
+\-Check (in non-\/realtime) if the given set of controllers is allowed to run simultaneously.
+
+\-This default implementation simply checks if any two controllers use the same resource. 
+
+\-Definition at line 70 of file robot\-\_\-hw.\-h.
+
+\index{hardware\-\_\-interface\-::\-Robot\-H\-W@{hardware\-\_\-interface\-::\-Robot\-H\-W}!get@{get}}
+\index{get@{get}!hardware_interface::RobotHW@{hardware\-\_\-interface\-::\-Robot\-H\-W}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ \-T$\ast$ {\bf hardware\-\_\-interface\-::\-Robot\-H\-W\-::get} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1RobotHW_a75dc7e362f3c2905606809d414d953c1}
+
+
+\-Get a hardware interface. 
+
+\-Since \doxyref{\-Robot\-H\-W}{p.}{classhardware__interface_1_1RobotHW} only stores one interface per type, this returns a pointer to the requested interface type. \-If the interface type is not registered, it will return {\ttfamily \-N\-U\-L\-L}.
+
+
+\begin{DoxyTemplParams}{\-Template Parameters}
+{\em \-T} & \-The hardware interface type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{\-Returns}
+\-A pointer to a hardware interface or {\ttfamily \-N\-U\-L\-L} 
+\end{DoxyReturn}
+
+
+\-Definition at line 127 of file robot\-\_\-hw.\-h.
+
+\index{hardware\-\_\-interface\-::\-Robot\-H\-W@{hardware\-\_\-interface\-::\-Robot\-H\-W}!register\-Interface@{register\-Interface}}
+\index{register\-Interface@{register\-Interface}!hardware_interface::RobotHW@{hardware\-\_\-interface\-::\-Robot\-H\-W}}
+\subsubsection[{register\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf hardware\-\_\-interface\-::\-Robot\-H\-W\-::register\-Interface} (
+\begin{DoxyParamCaption}
+\item[{\-T $\ast$}]{hw}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhardware__interface_1_1RobotHW_a9f418188d3552ce303fa4184d212e788}
+
+
+\-Register a hardware interface. 
+
+\-This associates the name of the type of interface to be registered with the given pointer.
+
+
+\begin{DoxyTemplParams}{\-Template Parameters}
+{\em \-T} & \-The hardware interface type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{\-Parameters}
+{\em hw} & \-A pointer to a hardware interface \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 110 of file robot\-\_\-hw.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{hardware\-\_\-interface\-::\-Robot\-H\-W@{hardware\-\_\-interface\-::\-Robot\-H\-W}!interfaces\-\_\-@{interfaces\-\_\-}}
+\index{interfaces\-\_\-@{interfaces\-\_\-}!hardware_interface::RobotHW@{hardware\-\_\-interface\-::\-Robot\-H\-W}}
+\subsubsection[{interfaces\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Interface\-Map} {\bf hardware\-\_\-interface\-::\-Robot\-H\-W\-::interfaces\-\_\-}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhardware__interface_1_1RobotHW_aff617f06c50fafbe80e95a66df48db1b}
+
+
+\-Definition at line 146 of file robot\-\_\-hw.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf robot\-\_\-hw.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,160 @@
+\section{controller\-\_\-manager\-\_\-msgs\-:\-:\-Controllers\-Statistics\-\_\-$<$ \-Container\-Allocator $>$ \-Struct \-Template \-Reference}
+\label{structcontroller__manager__msgs_1_1ControllersStatistics__}\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-$<$ Container\-Allocator $>$@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-$<$ Container\-Allocator $>$}}
+
+
+{\ttfamily \#include $<$\-Controllers\-Statistics.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::vector\*
+$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$\*
+, typename \*
+\-Container\-Allocator\-::template \*
+rebind\*
+$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$\*
+ $>$\-::other $>$ {\bf \-\_\-controller\-\_\-type}
+\item 
+typedef \-::std\-\_\-msgs\-::\-Header\-\_\-\*
+$<$ \-Container\-Allocator $>$ {\bf \-\_\-header\-\_\-type}
+\item 
+typedef boost\-::shared\-\_\-ptr\*
+$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$ const  $>$ {\bf \-Const\-Ptr}
+\item 
+typedef boost\-::shared\-\_\-ptr\*
+$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$ $>$ {\bf \-Ptr}
+\item 
+typedef {\bf \-Controllers\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$ {\bf \-Type}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controllers\-Statistics\-\_\-} ()
+\item 
+{\bf \-Controllers\-Statistics\-\_\-} (const \-Container\-Allocator \&\-\_\-alloc)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::shared\-\_\-ptr$<$ std\-::map\*
+$<$ std\-::string, std\-::string $>$ $>$ {\bf \-\_\-\-\_\-connection\-\_\-header}
+\item 
+std\-::vector\*
+$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$\*
+, typename \*
+\-Container\-Allocator\-::template \*
+rebind\*
+$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}\*
+$<$ \-Container\-Allocator $>$\*
+ $>$\-::other $>$ {\bf controller}
+\item 
+\-::std\-\_\-msgs\-::\-Header\-\_\-\*
+$<$ \-Container\-Allocator $>$ {\bf header}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class Container\-Allocator$>$struct controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-$<$ Container\-Allocator $>$}
+
+
+
+\-Definition at line 23 of file \-Controllers\-Statistics.\-h.
+
+
+
+\subsection{\-Member \-Typedef \-Documentation}
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!\-\_\-controller\-\_\-type@{\-\_\-controller\-\_\-type}}
+\index{\-\_\-controller\-\_\-type@{\-\_\-controller\-\_\-type}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-controller\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef std\-::vector$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ , typename \-Container\-Allocator\-::template rebind$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ $>$\-::other $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-controller\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___a4ed884ab49060aa79f833dcd09a0a9ef}
+
+
+\-Definition at line 41 of file \-Controllers\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!\-\_\-header\-\_\-type@{\-\_\-header\-\_\-type}}
+\index{\-\_\-header\-\_\-type@{\-\_\-header\-\_\-type}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-header\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef \-::std\-\_\-msgs\-::\-Header\-\_\-$<$\-Container\-Allocator$>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-header\-\_\-type}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___a3523e64a78831d17eb6bed44cff35f40}
+
+
+\-Definition at line 38 of file \-Controllers\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!\-Const\-Ptr@{\-Const\-Ptr}}
+\index{\-Const\-Ptr@{\-Const\-Ptr}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{\-Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef boost\-::shared\-\_\-ptr$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ const$>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Const\-Ptr}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___aa32948ba5a7a2388cca7578b043d7873}
+
+
+\-Definition at line 46 of file \-Controllers\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!\-Ptr@{\-Ptr}}
+\index{\-Ptr@{\-Ptr}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef boost\-::shared\-\_\-ptr$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Ptr}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___acea877b57d5af46dbb187ccdcf8214ad}
+
+
+\-Definition at line 45 of file \-Controllers\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!\-Type@{\-Type}}
+\index{\-Type@{\-Type}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ typedef {\bf \-Controllers\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Type}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___ae77419c109a92d0e373f7bd0ab2fcfa3}
+
+
+\-Definition at line 24 of file \-Controllers\-Statistics.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!\-Controllers\-Statistics\-\_\-@{\-Controllers\-Statistics\-\_\-}}
+\index{\-Controllers\-Statistics\-\_\-@{\-Controllers\-Statistics\-\_\-}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{\-Controllers\-Statistics\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Controllers\-Statistics\-\_\-} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___a31db650fa1efc1894d83250fac5db136}
+
+
+\-Definition at line 26 of file \-Controllers\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!\-Controllers\-Statistics\-\_\-@{\-Controllers\-Statistics\-\_\-}}
+\index{\-Controllers\-Statistics\-\_\-@{\-Controllers\-Statistics\-\_\-}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{\-Controllers\-Statistics\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-Controllers\-Statistics\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{const \-Container\-Allocator \&}]{\-\_\-alloc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___a55dbaa7a7834759ded1177e12eae0415}
+
+
+\-Definition at line 32 of file \-Controllers\-Statistics.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!\-\_\-\-\_\-connection\-\_\-header@{\-\_\-\-\_\-connection\-\_\-header}}
+\index{\-\_\-\-\_\-connection\-\_\-header@{\-\_\-\-\_\-connection\-\_\-header}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{\-\_\-\-\_\-connection\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ boost\-::shared\-\_\-ptr$<$std\-::map$<$std\-::string, std\-::string$>$ $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf \-\_\-\-\_\-connection\-\_\-header}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___aa80eb28ca5b99185d22db38b7d6ea7e0}
+
+
+\-Definition at line 47 of file \-Controllers\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!controller@{controller}}
+\index{controller@{controller}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{controller}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ std\-::vector$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ , typename \-Container\-Allocator\-::template rebind$<$ \-::{\bf controller\-\_\-manager\-\_\-msgs\-::\-Controller\-Statistics\-\_\-}$<$\-Container\-Allocator$>$ $>$\-::other $>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf controller}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___af7419093366424a361920228f52e1990}
+
+
+\-Definition at line 42 of file \-Controllers\-Statistics.\-h.
+
+\index{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}!header@{header}}
+\index{header@{header}!controller_manager_msgs::ControllersStatistics_@{controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Container\-Allocator $>$ \-::std\-\_\-msgs\-::\-Header\-\_\-$<$\-Container\-Allocator$>$ {\bf controller\-\_\-manager\-\_\-msgs\-::\-Controllers\-Statistics\-\_\-}$<$ \-Container\-Allocator $>$\-::{\bf header}}\label{structcontroller__manager__msgs_1_1ControllersStatistics___a5945f19ca50df39027a319fc84756761}
+
+
+\-Definition at line 39 of file \-Controllers\-Statistics.\-h.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf \-Controllers\-Statistics.\-h}\end{DoxyCompactItemize}
